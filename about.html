@@ -47,7 +47,7 @@
         <script src="js/respond.min.js"></script>
         <![endif]-->
 
-  <style>
+ <style>
     /* Responsividade e melhorias */
     .fh5co-cover {
         background-size: cover;
@@ -81,51 +81,40 @@
         }
     }
 
-    /* Alinhamento de texto */
-    /* Layout original para computadores */
+    /* Texto centralizado em todas as telas */
     #listadepresentes_galeria p,
     #listadepresentes_galeria h2 {
-        text-align: left; /* Texto alinhado à esquerda no computador */
+        text-align: center; /* Texto centrado em todas as telas */
     }
 
-    .gallery-item {
-        max-width: 700px; /* Respeita o layout original no computador */
-        height: 250px; /* Altura fixa para garantir uniformidade */
-    }
-
-    /* Ajustes para dispositivos móveis */
-    @media (max-width: 768px) {
-        #listadepresentes_galeria p,
-        #listadepresentes_galeria h2 {
-            text-align: center; /* Centraliza no telemóvel */
-        }
-
-        .gallery-item {
-            max-width: 100%; /* Ajusta a largura das imagens no telemóvel */
-            height: auto; /* Altura proporcional no telemóvel */
-        }
-    }
-
-    /* Melhor ajuste da Galeria */
+    /* Galeria original no computador */
     #listadepresentes_galeria-list {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Garante alinhamento central */
-        gap: 20px;
+        flex-wrap: nowrap; /* Original: lado a lado */
+        justify-content: center;
+        gap: 10px;
         padding: 0;
     }
 
     .gallery-item {
-        width: 100%; /* Para telas pequenas */
+        width: 700px; /* Original no computador */
+        height: 250px;
         background-size: cover;
         background-position: center;
         border-radius: 5px; /* Bordas arredondadas */
         overflow: hidden;
     }
 
-    @media (min-width: 768px) {
+    /* Ajustes para dispositivos móveis */
+    @media (max-width: 768px) {
+        #listadepresentes_galeria-list {
+            flex-wrap: wrap; /* Fotos ajustadas no telemóvel */
+            gap: 20px; /* Maior espaçamento no telemóvel */
+        }
+
         .gallery-item {
-            max-width: 700px; /* Tamanho para telas maiores */
+            width: 100%; /* Fotos ocupam toda a largura */
+            height: auto; /* Altura proporcional no telemóvel */
         }
     }
 </style>
