@@ -81,10 +81,13 @@
         }
     }
 
-    /* Texto centralizado */
+    /* Texto centralizado e largura limitada */
     #listadepresentes_galeria p,
     #listadepresentes_galeria h2 {
-        text-align: center; /* Mantém texto sempre centrado */
+        text-align: center; /* Sempre centralizado */
+        max-width: 800px; /* Limita a largura do texto no computador */
+        margin: 0 auto; /* Centraliza no meio do contêiner */
+        line-height: 1.6; /* Melhora a legibilidade */
     }
 
     /* Galeria com layout original no computador */
@@ -92,7 +95,7 @@
         display: flex;
         flex-wrap: nowrap; /* Mantém fotos lado a lado no computador */
         justify-content: center;
-        gap: 5px; /* Reduzido o espaçamento entre as fotos */
+        gap: 5px; /* Espaçamento reduzido entre as fotos */
         padding: 0;
     }
 
@@ -107,6 +110,12 @@
 
     /* Ajustes para dispositivos móveis */
     @media (max-width: 768px) {
+        #listadepresentes_galeria p,
+        #listadepresentes_galeria h2 {
+            text-align: center; /* Texto centralizado no telemóvel */
+            max-width: 100%; /* Ocupa toda a largura disponível */
+        }
+
         #listadepresentes_galeria-list {
             flex-wrap: wrap; /* Fotos uma abaixo da outra no telemóvel */
             gap: 10px; /* Espaçamento maior no telemóvel */
