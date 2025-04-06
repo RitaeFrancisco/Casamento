@@ -47,7 +47,7 @@
         <script src="js/respond.min.js"></script>
         <![endif]-->
 
- <style>
+<style>
     /* Responsividade e melhorias */
     .fh5co-cover {
         background-size: cover;
@@ -81,24 +81,24 @@
         }
     }
 
-    /* Texto centralizado em todas as telas */
+    /* Texto centralizado */
     #listadepresentes_galeria p,
     #listadepresentes_galeria h2 {
-        text-align: center; /* Texto centrado em todas as telas */
+        text-align: center; /* Mantém texto sempre centrado */
     }
 
-    /* Galeria original no computador */
+    /* Galeria com layout original no computador */
     #listadepresentes_galeria-list {
         display: flex;
-        flex-wrap: nowrap; /* Original: lado a lado */
+        flex-wrap: nowrap; /* Mantém fotos lado a lado no computador */
         justify-content: center;
-        gap: 10px;
+        gap: 5px; /* Reduzido o espaçamento entre as fotos */
         padding: 0;
     }
 
     .gallery-item {
-        width: 700px; /* Original no computador */
-        height: 250px;
+        width: 700px; /* Mantém tamanho original no computador */
+        height: 250px; /* Mantém altura fixa para uniformidade */
         background-size: cover;
         background-position: center;
         border-radius: 5px; /* Bordas arredondadas */
@@ -108,16 +108,17 @@
     /* Ajustes para dispositivos móveis */
     @media (max-width: 768px) {
         #listadepresentes_galeria-list {
-            flex-wrap: wrap; /* Fotos ajustadas no telemóvel */
-            gap: 20px; /* Maior espaçamento no telemóvel */
+            flex-wrap: wrap; /* Fotos uma abaixo da outra no telemóvel */
+            gap: 10px; /* Espaçamento maior no telemóvel */
         }
 
         .gallery-item {
-            width: 100%; /* Fotos ocupam toda a largura */
+            width: 100%; /* Fotos ocupam toda a largura no telemóvel */
             height: auto; /* Altura proporcional no telemóvel */
         }
     }
 </style>
+
 
 
     </head>
