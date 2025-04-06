@@ -60,13 +60,25 @@
                 padding: 10px;
             }
 
+            /* Menu Horizontal */
             .fh5co-nav ul {
-                padding: 0;
                 list-style: none;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
+                padding: 0;
+                display: flex; /* Alinha horizontalmente */
+                gap: 20px;
+                justify-content: flex-end; /* Alinha à direita */
+            }
+
+            .fh5co-nav li {
+                display: inline; /* Torna os itens do menu inline */
+            }
+
+            /* Menu Vertical para telas pequenas */
+            @media (max-width: 768px) {
+                .fh5co-nav ul {
+                    flex-direction: column; /* Menu vertical */
+                    gap: 10px;
+                }
             }
 
             .timeline {
@@ -84,10 +96,6 @@
                 padding: 10px 20px;
                 font-size: 1rem;
                 border-radius: 5px;
-            }
-
-            .col-xs-12 {
-                width: 100%;
             }
         </style>
     </head>
@@ -160,7 +168,7 @@
                                         </div>
                                         <div class="timeline-body">
                                             <p>Um ano depois, Rita inscreveu-se para o projeto em Cabo Verde e Francisco era o chefe do mesmo projeto. Ele fez-lhe uma entrevista, que ela passou com sucesso. Depois de uma semana l&aacute;, Rita come&ccedil;ou a gostar dele. Durante o m&ecirc;s que estiveram l&aacute;, ela tentava dar sinais, mas Francisco n&atilde;o percebia nada. No &uacute;ltimo dia, ela encostou o ombro no dele para &ldquo;dormir&rdquo; no avi&atilde;o... Spoiler: n&atilde;o era para dormir, era s&oacute; para estar perto dele.</p>
-					</div>
+                                        </div>
 							</div>
 						</li>
 						<li class="animate-box">
