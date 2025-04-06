@@ -47,7 +47,7 @@
         <script src="js/respond.min.js"></script>
         <![endif]-->
 
-   <style>
+  <style>
     /* Responsividade e melhorias */
     .fh5co-cover {
         background-size: cover;
@@ -90,6 +90,7 @@
 
     .gallery-item {
         max-width: 700px; /* Respeita o layout original no computador */
+        height: 250px; /* Altura fixa para garantir uniformidade */
     }
 
     /* Ajustes para dispositivos móveis */
@@ -101,6 +102,7 @@
 
         .gallery-item {
             max-width: 100%; /* Ajusta a largura das imagens no telemóvel */
+            height: auto; /* Altura proporcional no telemóvel */
         }
     }
 
@@ -115,9 +117,6 @@
 
     .gallery-item {
         width: 100%; /* Para telas pequenas */
-        max-width: 400px; /* Ajusta tamanho máximo em telas médias */
-        height: auto; /* Altura proporcional à largura */
-        aspect-ratio: 16 / 9; /* Define proporção para imagens */
         background-size: cover;
         background-position: center;
         border-radius: 5px; /* Bordas arredondadas */
@@ -126,10 +125,11 @@
 
     @media (min-width: 768px) {
         .gallery-item {
-            max-width: 600px; /* Ajuste para telas médias */
+            max-width: 700px; /* Tamanho para telas maiores */
         }
     }
 </style>
+
 
     </head>
     <body id="lista">
