@@ -45,12 +45,12 @@
         <![endif]-->
 
         <!-- CSS Personalizado -->
-        <style>
+       <style>
     /* Responsividade geral */
     .fh5co-cover {
         background-size: cover;
         background-position: center;
-        height: 100vh;
+        height: 100vh; /* Mantém altura total */
         position: relative; /* Permite posicionar elementos sobre a capa */
     }
 
@@ -60,67 +60,57 @@
 
     /* Título principal e subtítulo */
     header h1 {
-        margin-top: 20px; /* Ajusta para posicionamento ideal */
+        margin-top: 20px;
         font-size: 2.5rem;
         color: white; /* Melhor contraste sobre a capa */
+        position: relative; /* Mantém título sobre a fotografia */
+        z-index: 2; /* Garante visibilidade */
     }
 
     header h2 {
-        margin-top: 40px; /* Posiciona abaixo do título */
+        margin-top: 10px; /* Reduz distância entre título e subtítulo */
         font-size: 1.5rem;
         line-height: 1.6;
         color: white; /* Melhor contraste sobre a capa */
+        position: relative; /* Mantém subtítulo sobre a fotografia */
+        z-index: 2; /* Garante visibilidade */
     }
 
     /* Botão e countdown */
     header .btn {
-        margin-top: 20px; /* Ajusta posicionamento do botão */
+        margin-top: 15px; /* Ajusta posição do botão */
         padding: 10px 20px;
         border-radius: 5px;
         background-color: rgb(246, 231, 231);
         color: rgb(190, 94, 96);
-        position: relative; /* Mantém o posicionamento sobre a capa */
-        z-index: 1; /* Garante que o botão fique visível */
+        position: absolute; /* Posiciona sobre a capa */
+        bottom: 20%; /* Ajusta posição acima da próxima seção */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Corrige centralização */
+        z-index: 2; /* Garante que fique visível */
     }
 
     .simply-countdown {
         margin-top: 30px; /* Espaço acima do countdown */
         font-size: 1.5rem; /* Tamanho ajustado para o computador */
         color: white; /* Contraste sobre a fotografia */
+        position: relative; /* Mantém countdown sobre a capa */
+        z-index: 2; /* Garante visibilidade */
     }
 
-    /* Seção de confirmar presença */
-    #fh5co-couple-story h2 {
-        margin-top: 20px;
-        margin-bottom: 10px;
-        text-align: center; /* Sempre centralizado */
-        font-size: 2rem;
+    /* Elimina espaço entre seções */
+    #fh5co-header {
+        margin-bottom: 0; /* Elimina o espaçamento extra */
     }
 
-    #fh5co-couple-story p {
-        text-align: center;
-        max-width: 800px; /* Limita a largura no computador */
-        margin: 0 auto; /* Centraliza no meio do contêiner */
-        line-height: 1.6; /* Melhora a legibilidade */
+    #fh5co-couple-story {
+        margin-top: -30px; /* Reduz distância entre as seções */
     }
 
-    /* Seção de eventos */
-    #fh5co-event .event-wrap {
-        margin-bottom: 20px;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
-        border-radius: 5px;
-    }
-
-    #fh5co-event h3 {
-        font-size: 1.8rem;
-        color: rgb(246, 231, 231); /* Cor original */
-    }
-
-    /* Ajustes responsivos para telemóveis */
+    /* Responsividade para telemóveis */
     @media (max-width: 768px) {
         .fh5co-cover {
-            height: auto; /* Ajusta para caber na tela do telemóvel */
+            height: auto; /* Ajusta altura da capa para caber no ecrã */
         }
 
         header h1 {
@@ -128,34 +118,28 @@
         }
 
         header h2 {
-            margin-top: 20px; /* Posiciona abaixo do título no telemóvel */
-            font-size: 1.2rem;
+            margin-top: 10px; /* Posiciona abaixo do título no telemóvel */
+            font-size: 1.2rem; /* Reduz tamanho do subtítulo */
         }
 
         .simply-countdown {
-            font-size: 1rem; /* Reduz o tamanho do countdown no telemóvel */
+            font-size: 1rem; /* Reduz tamanho do countdown no telemóvel */
             margin-top: 20px;
         }
 
         header .btn {
-            font-size: 0.9rem; /* Reduz tamanho do botão */
+            font-size: 0.9rem; /* Reduz tamanho do botão no telemóvel */
+            bottom: auto; /* Remove posicionamento absoluto */
             margin-top: 15px; /* Ajusta espaçamento no telemóvel */
             padding: 8px 16px; /* Botão menor e mais proporcional */
         }
 
-        #fh5co-couple-story p {
-            max-width: 100%; /* Texto ocupa a tela toda no telemóvel */
-        }
-
-        .event-wrap {
-            padding: 10px; /* Reduz espaçamento interno no telemóvel */
-        }
-
-        #fh5co-event h3 {
-            font-size: 1.5rem; /* Reduz tamanho para telemóveis */
+        #fh5co-couple-story {
+            margin-top: 0; /* Ajusta distância no telemóvel */
         }
     }
 </style>
+
 
     </head>
     <body id="index">
