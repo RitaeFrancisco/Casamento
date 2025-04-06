@@ -46,91 +46,117 @@
 
         <!-- CSS Personalizado -->
         <style>
-            /* Responsividade geral */
-            .fh5co-cover {
-                background-size: cover;
-                background-position: center;
-                height: 100vh;
-            }
+    /* Responsividade geral */
+    .fh5co-cover {
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        position: relative; /* Permite posicionar elementos sobre a capa */
+    }
 
-            .text-center {
-                text-align: center;
-            }
+    .text-center {
+        text-align: center;
+    }
 
-            /* Título principal e subtítulo */
-            header h1 {
-                margin-top: -20px; /* Mantém posição original no computador */
-                font-size: 2.5rem; /* Tamanho adaptado ao computador */
-            }
+    /* Título principal e subtítulo */
+    header h1 {
+        margin-top: 20px; /* Ajusta para posicionamento ideal */
+        font-size: 2.5rem;
+        color: white; /* Melhor contraste sobre a capa */
+    }
 
-            header h2 {
-                margin-top: 200px; /* Mantém posição original no computador */
-                font-size: 1.5rem;
-                line-height: 1.6; /* Melhora a legibilidade */
-            }
+    header h2 {
+        margin-top: 40px; /* Posiciona abaixo do título */
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: white; /* Melhor contraste sobre a capa */
+    }
 
-            /* Ajuste do botão "Já está marcado na vossa Agenda?" */
-            header .btn {
-                margin-top: 15px;
-                margin-bottom: 20px; /* Espaçamento entre o botão e próximo elemento */
-                padding: 10px 20px;
-                border-radius: 5px;
-            }
+    /* Botão e countdown */
+    header .btn {
+        margin-top: 20px; /* Ajusta posicionamento do botão */
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: rgb(246, 231, 231);
+        color: rgb(190, 94, 96);
+        position: relative; /* Mantém o posicionamento sobre a capa */
+        z-index: 1; /* Garante que o botão fique visível */
+    }
 
-            /* Seção de confirmar presença */
-            #fh5co-couple-story h2 {
-                margin-top: 20px;
-                margin-bottom: 10px;
-                text-align: center; /* Sempre centralizado */
-                font-size: 2rem;
-            }
+    .simply-countdown {
+        margin-top: 30px; /* Espaço acima do countdown */
+        font-size: 1.5rem; /* Tamanho ajustado para o computador */
+        color: white; /* Contraste sobre a fotografia */
+    }
 
-            #fh5co-couple-story p {
-                text-align: center;
-                max-width: 800px; /* Limita a largura no computador */
-                margin: 0 auto; /* Centraliza no meio do contêiner */
-                line-height: 1.6; /* Melhora a legibilidade */
-            }
+    /* Seção de confirmar presença */
+    #fh5co-couple-story h2 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        text-align: center; /* Sempre centralizado */
+        font-size: 2rem;
+    }
 
-            /* Seção de eventos */
-            #fh5co-event .event-wrap {
-                margin-bottom: 20px;
-                padding: 15px;
-                background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
-                border-radius: 5px;
-            }
+    #fh5co-couple-story p {
+        text-align: center;
+        max-width: 800px; /* Limita a largura no computador */
+        margin: 0 auto; /* Centraliza no meio do contêiner */
+        line-height: 1.6; /* Melhora a legibilidade */
+    }
 
-            #fh5co-event h3 {
-                font-size: 1.8rem;
-                color: rgb(246, 231, 231); /* Cor original */
-            }
+    /* Seção de eventos */
+    #fh5co-event .event-wrap {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+        border-radius: 5px;
+    }
 
-            /* Ajustes responsivos para telemóveis */
-            @media (max-width: 768px) {
-                header h1 {
-                    margin-top: 0; /* Ajusta posição no telemóvel */
-                    font-size: 2rem;
-                }
+    #fh5co-event h3 {
+        font-size: 1.8rem;
+        color: rgb(246, 231, 231); /* Cor original */
+    }
 
-                header h2 {
-                    margin-top: 150px; /* Ajusta para caber no ecrã */
-                    font-size: 1.2rem; /* Tamanho reduzido para telemóveis */
-                    line-height: 1.4;
-                }
+    /* Ajustes responsivos para telemóveis */
+    @media (max-width: 768px) {
+        .fh5co-cover {
+            height: auto; /* Ajusta para caber na tela do telemóvel */
+        }
 
-                #fh5co-couple-story p {
-                    max-width: 100%; /* Texto ocupa a tela toda no telemóvel */
-                }
+        header h1 {
+            font-size: 2rem; /* Tamanho reduzido para telemóveis */
+        }
 
-                .event-wrap {
-                    padding: 10px; /* Reduz espaçamento interno no telemóvel */
-                }
+        header h2 {
+            margin-top: 20px; /* Posiciona abaixo do título no telemóvel */
+            font-size: 1.2rem;
+        }
 
-                #fh5co-event h3 {
-                    font-size: 1.5rem; /* Reduz tamanho para telemóveis */
-                }
-            }
-        </style>
+        .simply-countdown {
+            font-size: 1rem; /* Reduz o tamanho do countdown no telemóvel */
+            margin-top: 20px;
+        }
+
+        header .btn {
+            font-size: 0.9rem; /* Reduz tamanho do botão */
+            margin-top: 15px; /* Ajusta espaçamento no telemóvel */
+            padding: 8px 16px; /* Botão menor e mais proporcional */
+        }
+
+        #fh5co-couple-story p {
+            max-width: 100%; /* Texto ocupa a tela toda no telemóvel */
+        }
+
+        .event-wrap {
+            padding: 10px; /* Reduz espaçamento interno no telemóvel */
+        }
+
+        #fh5co-event h3 {
+            font-size: 1.5rem; /* Reduz tamanho para telemóveis */
+        }
+    }
+</style>
+
     </head>
     <body id="index">
         <div class="fh5co-loader"></div>
@@ -152,34 +178,28 @@
             </nav>
 
 <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
-
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="display-t">
                     <div class="display-tc animate-box" data-animate-effect="fadeIn">
-
-                        <h1 style="margin-top: -20px;">Rita &amp; Francisco</h1>
-
-<br>
-<br>
-
-
-<h2 style="margin-top: +200px;">Querida fam&iacute;lia e queridos amigos, vamos casar! Enfim, este namoro que come&ccedil;ou por falar crioulo, em Santo Ant&atilde;o, vai tornar-se casamento de Santo Ant&oacute;nio!</h2>
-<div class="simply-countdown simply-countdown-one"></div>
-<p>
-    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco&dates=20250613T140000Z/20250613T235900Z&details=Querida+fam&iacute;lia+e+queridos+amigos,+vamos+casar!+Enfim,+este+namoro+que+come&ccedil;ou+por+falar+crioulo,+em+Santo+Ant&atilde;o,+vai+tornar-se+casamento+de+Santo+Ant&oacute;nio!+O+nosso+Dia+d&#39;Czmente+ser&aacute;+a+13+de+Junho+de+2025,+Sexta-feira,+&agrave;s+15h,+na+Igreja+de+Santa+Maria+de+Loures.&location=https://maps.app.goo.gl/aBkcbi4PF5BHTTP57?g_st=iw&sf=true&output=xml" 
-       class="btn btn-default btn-sm" 
-       target="_blank" 
-       style="text-decoration: none; background-color: rgb(246, 231, 231) !important; color: rgb(190, 94, 96) !important;">
-       J&aacute; est&aacute; marcado na vossa Agenda?
-    </a>
-</p>
-</div>
-</div>
-</div>
-</div>
+                        <h1>Rita &amp; Francisco</h1>
+                        <h2>Querida fam&iacute;lia e queridos amigos, vamos casar! Enfim, este namoro que come&ccedil;ou por falar crioulo, em Santo Ant&atilde;o, vai tornar-se casamento de Santo Ant&oacute;nio!</h2>
+                        <div class="simply-countdown simply-countdown-one"></div>
+                        <p>
+                            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco&dates=20250613T140000Z/20250613T235900Z&details=Querida+fam&iacute;lia+e+queridos+amigos,+vamos+casar!+Enfim,+este+namoro+que+come&ccedil;ou+por+falar+crioulo,+em+Santo+Ant&atilde;o,+vai+tornar-se+casamento+de+Santo+Ant&oacute;nio!+O+nosso+Dia+d&#39;Czmente+ser&aacute;+a+13+de+Junho+de+2025,+Sexta-feira,+&agrave;s+15h,+na+Igreja+de+Santa+Maria+de+Loures.&location=https://maps.app.goo.gl/aBkcbi4PF5BHTTP57?g_st=iw&sf=true&output=xml" 
+                               class="btn btn-default btn-sm" 
+                               target="_blank">
+                               J&aacute; est&aacute; marcado na vossa Agenda?
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
+
 
 <div id="fh5co-couple-story">
     <div class="container">
