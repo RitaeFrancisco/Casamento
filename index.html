@@ -19,7 +19,7 @@
 
   <!-- Estilos Internos para Ajustes de Mobile -->
   <style>
-    /* Centralização do Header */
+    /* Código que enviei anteriormente vai aqui */
     #fh5co-header .display-t {
       display: table;
       width: 100%;
@@ -29,41 +29,35 @@
     #fh5co-header .display-tc {
       display: table-cell;
       vertical-align: middle;
-      text-align: center; /* Alinha o texto horizontalmente */
+      text-align: center;
     }
 
     @media screen and (max-width: 768px) {
       #fh5co-header {
+        text-align: left;
+        padding-left: 15px;
         background-size: cover;
         background-position: center;
-        height: auto; /* Ajusta a altura dinamicamente */
+        height: auto;
         padding: 20px;
       }
       #fh5co-header h1 {
-        font-size: 28px;
+        font-size: 24px;
         margin-top: 10px;
       }
       #fh5co-header h2 {
         font-size: 16px;
         margin-top: 5px;
       }
-    }
-
-    /* Ajuste do Countdown no Mobile */
-    @media screen and (max-width: 768px) {
       .simply-countdown {
-        display: flex; /* Permite alinhar lado a lado */
+        display: flex;
         justify-content: center;
-        transform: scale(0.7); /* Reduz o tamanho */
+        transform: scale(0.7);
         margin-top: 10px;
       }
-    }
-
-    /* Botão de "Marcar na Agenda" */
-    @media screen and (max-width: 768px) {
       #fh5co-header .btn {
-        display: inline-block;
-        margin-top: 10px; /* Espaço entre countdown e botão */
+        display: block;
+        margin-top: 10px;
         position: relative;
         z-index: 2;
       }
