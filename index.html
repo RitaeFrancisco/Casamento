@@ -19,41 +19,38 @@
 
   <!-- Estilos Internos para Centralização e Ajustes -->
   <style>
-    /* Estilos Gerais */
+    /* Reset de margens e preenchimentos */
     body {
       margin: 0;
       padding: 0;
       font-family: "Work Sans", Arial, sans-serif;
-      overflow-wrap: break-word;  /* Ensure text doesn’t overflow */
     }
 
-    /* Header - Ajuste Completo */
+    /* Cabeçalho - Centralização */
     #fh5co-header {
       margin: 0;
       position: relative;
       width: 100%;
       padding: 0;
       box-sizing: border-box;
-      display: flex;  /* Flexbox for centering */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      text-align: center;
       background-size: cover;
       background-position: center center;
-      height: 100vh;  /* Ensure it takes full screen height */
+      text-align: center;
+      height: 100vh; /* Tamanho da tela */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* Container Interno */
+    /* Ajustes de conteúdo */
     #fh5co-header .container {
-      margin: 0 auto;
       padding: 0 15px;
-      max-width: 100%; /* Permite que o conteúdo use toda a largura */
     }
 
-    /* Títulos */
+    /* Texto do Cabeçalho */
     #fh5co-header h1 {
       font-size: 40px;
-      margin: 20px 0 10px;
+      margin: 20px 0;
     }
 
     #fh5co-header h2 {
@@ -61,50 +58,50 @@
       margin-bottom: 15px;
     }
 
-    /* Botão e Countdown */
+    /* Estilo para o Countdown */
     .simply-countdown {
       display: flex;
       justify-content: center;
-      transform: scale(1);  /* Reset scale to default */
-      margin-top: 10px;
+      margin-top: 20px;
     }
 
-    #fh5co-header .btn {
+    /* Botão */
+    .btn {
       display: inline-block;
-      margin-top: 10px;
-      position: relative;
-      z-index: 2;
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 14px;
+      background-color: rgb(246, 231, 231);
+      color: rgb(190, 94, 96);
+      text-decoration: none;
+      border: 2px solid rgb(190, 94, 96);
+      border-radius: 5px;
     }
 
-    /* Ajustes para Mobile */
+    /* Ajustes para dispositivos móveis */
     @media screen and (max-width: 768px) {
       #fh5co-header {
-        background-size: contain;  /* Fit image without cutting it off */
+        background-size: contain; /* Ajusta a imagem no fundo */
         background-position: top center;
-        height: 100vh;
-        padding: 10px; /* Espaço interno adicional no mobile */
+        padding: 10px;
       }
 
       #fh5co-header h1 {
-        font-size: 24px; /* Adjust header size for mobile */
+        font-size: 28px;
       }
 
       #fh5co-header h2 {
-        font-size: 14px; /* Adjust subheader size for mobile */
-      }
-
-      #fh5co-header .container {
-        padding: 0 10px; /* Espaço interno no mobile */
+        font-size: 16px;
       }
 
       .simply-countdown {
-        transform: scale(0.8); /* Scale down a bit for mobile */
-        margin-top: 20px; /* Add some space */
+        margin-top: 10px;
+        font-size: 16px;
       }
 
       .btn {
-        font-size: 12px; /* Button text size */
-        padding: 10px 20px; /* Button padding for better fit */
+        font-size: 12px;
+        padding: 10px 20px;
       }
     }
   </style>
@@ -143,9 +140,8 @@
                 <h2>Querida família e queridos amigos, vamos casar! Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo António!</h2>
                 <div class="simply-countdown simply-countdown-one"></div>
                 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco..."
-                   class="btn btn-default btn-sm" 
-                   target="_blank" 
-                   style="background-color: rgb(246, 231, 231); color: rgb(190, 94, 96);">
+                   class="btn" 
+                   target="_blank">
                    Já está marcado na vossa Agenda?
                 </a>
               </div>
@@ -159,12 +155,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-            <h2 style="color: rgb(190, 94, 96);">Confirmar Presença</h2>
+            <h2>Confirmar Presença</h2>
             <p>Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo Antonio!</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdujdXQWS-uGYEYhOZcDltZ3mu99keoDqens84QMBQj693c0w/viewform?usp=dialog"
-               class="btn btn-default" 
-               target="_blank" 
-               style="text-decoration: none; width: 200px; height: 50px; line-height: 50px; display: inline-block; text-align: center; vertical-align: middle; padding: 0; background-color: rgb(190, 94, 96); color: rgb(246, 231, 231);">
+               class="btn" 
+               target="_blank">
                Confirmar presença
             </a>
           </div>
