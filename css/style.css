@@ -348,22 +348,7 @@ h1, h2, h3, h4, h5, h6, figure {
     padding: 20px 0; /* Espaçamento extra para o texto não ficar encostado */
   }
 
-  /* Centralização do texto */
-  .fh5co-header h1 {
-    font-size: 23px; /* Tamanho de fonte ajustado */
-    margin: 0px 0;
-    text-align: center; /* Garante que o texto fique centralizado */
-  }
-
-  .fh5co-header h2 {
-    font-size: 14px; /* Ajuste do tamanho da fonte */
-    margin: 0px 0;
-    max-width: 90%; /* Evita que o texto ocupe toda a largura */
-    margin-left: 2px;
-    margin-right: auto;
-    text-align: center; /* Centraliza o subtítulo */
-  }
-
+ 
   /* Ajuste no contador */
   .simply-countdown {
     transform: scale(0.8); /* Ajusta o tamanho do contador */
