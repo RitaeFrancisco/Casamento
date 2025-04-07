@@ -103,11 +103,42 @@ h1, h2, h3, h4, h5, h6, figure {
   padding: 40px 0;
   z-index: 1001;
 }
+
+
+/* Responsividade para dispositivos móveis */
 @media screen and (max-width: 768px) {
   .fh5co-nav {
     padding: 20px 0;
   }
+  .menu-1 ul {
+    display: block;
+    text-align: center;
+  }
+  .menu-1 ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  .fh5co-cover {
+    height: auto;
+    padding: 20px;
+  }
+  h1, h2, h3 {
+    font-size: smaller;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin: 10px auto;
+    display: block;
+  }
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
 .fh5co-nav #fh5co-logo {
   font-size: 40px;
   margin: 0;
@@ -242,7 +273,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
-  height: 100px; /* Ajuste a altura conforme necess�rio */
+  height: 100px; /* Ajuste a altura conforme necessário */
 }
 
 .fh5co-bg {
@@ -1346,7 +1377,7 @@ form label {
 #fh5co-started {
   position: relative;
 }
-/* Não estou a usar isto*/
+/* NÃ£o estou a usar isto*/
 #fh5co-started .overlay {
     background: rgba(0, 0, 0, 0); /* Adjust the opacity here, 0.5 means 50% transparent */
     position: absolute;
@@ -1427,10 +1458,10 @@ form label {
 }
 
 #fh5co-footer.footer-image {
-    width: 100vw; /* Garantir que a imagem ocupe 100% da largura da janela de visualização */
+    width: 100vw; /* Garantir que a imagem ocupe 100% da largura da janela de visualizaÃ§Ã£o */
     height: auto;
-    object-fit: cover; /* Mantém a proporção da imagem */
-    object-position: left center; /* Centraliza a imagem horizontalmente e ajusta a posição */
+    object-fit: cover; /* MantÃ©m a proporÃ§Ã£o da imagem */
+    object-position: left center; /* Centraliza a imagem horizontalmente e ajusta a posiÃ§Ã£o */
 }
 
 
