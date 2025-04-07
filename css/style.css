@@ -938,27 +938,7 @@ body {
   border-radius: 50%;
 }
 
-@media screen and (max-width: 768px) {
-  .simply-countdown > .simply-section {
-    width: 60px; /* Reduz tamanho para mobile */
-    height: 60px;
-  }
-}
 
-/* Responsividade Geral */
-@media screen and (max-width: 768px) {
-  #fh5co-header {
-    padding: 10px;
-    width: 100vw;
-    background-size: cover;
-    background-position: center center;
-    height: auto; /* Ajusta altura dinamicamente */
-  }
-
-  #fh5co-header .container {
-    padding: 0 10px; /* Espaço interno no mobile */
-  }
-}
 
 #fh5co-counter {
   text-align: center;
