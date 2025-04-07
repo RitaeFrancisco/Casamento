@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6, figure {
   .fh5co-cover {
     height: auto; /* Permite que a altura se ajuste dinamicamente */
     background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
-    background-position: center center; /* Centraliza a imagem */
+    background-position: center; /* Centraliza a imagem */
   }
 
   /* Ajustes da tabela de alinhamento */
@@ -383,27 +383,6 @@ h1, h2, h3, h4, h5, h6, figure {
     width: 100%;
     padding: 0 5%; /* Diminui as margens laterais */
     box-sizing: border-box;
-  }
-
-  /* Ajustes no contador e evento */
-  #fh5co-event {
-    height: auto !important;
-    padding: 40px 0;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .event-wrap {
-    margin-bottom: 30px;
-  }
-
-  .couple-wrap {
-    flex-direction: column;
-  }
-
-  .couple-half {
-    width: 100%;
-    margin-bottom: 20px;
   }
 }
 
