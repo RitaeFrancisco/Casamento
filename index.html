@@ -19,34 +19,53 @@
 
   <!-- Estilos Internos para Ajustes de Mobile -->
   <style>
-    /* Ajustes para a Imagem da Capa */
+    /* Centralização do Header */
+    #fh5co-header .display-t {
+      display: table;
+      width: 100%;
+      height: auto;
+    }
+
+    #fh5co-header .display-tc {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center; /* Alinha o texto horizontalmente */
+    }
+
     @media screen and (max-width: 768px) {
       #fh5co-header {
         background-size: cover;
         background-position: center;
-        height: 450px; /* Ajuste para que a capa ocupe o espaço necessário */
+        height: 450px; /* Altura ajustada */
+        padding: 20px; /* Garantir espaçamento interno */
       }
-    }
-
-    /* Título Responsivo */
-    @media screen and (max-width: 768px) {
       #fh5co-header h1 {
         font-size: 28px;
-        margin-top: 30px; /* Mantém espaçamento correto */
+        margin-top: 10px;
       }
       #fh5co-header h2 {
-        font-size: 18px;
-        margin-top: 10px;
+        font-size: 16px;
+        margin-top: 5px;
       }
     }
 
-    /* Countdown Responsivo */
+    /* Corrigindo o Botão no Mobile */
+    @media screen and (max-width: 768px) {
+      #fh5co-header .btn {
+        display: inline-block;
+        margin-top: 20px; /* Espaçamento suficiente */
+        position: relative; /* Mantém dentro do container */
+        z-index: 2; /* Sobrepõe o restante */
+      }
+    }
+
+    /* Ajuste Final do Countdown */
     @media screen and (max-width: 768px) {
       .simply-countdown {
-        display: flex; /* Permite alinhar lado a lado */
-        justify-content: center;
-        transform: scale(0.7); /* Reduz o tamanho */
-        margin-top: 20px;
+        display: inline-block;
+        transform: scale(0.7);
+        margin-top: 10px;
+        z-index: 1; /* Mantém o countdown abaixo do botão */
       }
     }
   </style>
@@ -84,7 +103,6 @@
               <div class="display-tc animate-box" data-animate-effect="fadeIn">
                 <h1>Rita &amp; Francisco</h1>
                 <br>
-                <br>
                 <h2>Querida família e queridos amigos, vamos casar! Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo António!</h2>
                 <div class="simply-countdown simply-countdown-one"></div>
                 <p>
@@ -101,7 +119,6 @@
         </div>
       </div>
     </header>
- 
  
  
  <div id="fh5co-couple-story">
