@@ -3,197 +3,125 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rita & Francisco</title>
 
-        <!-- Facebook and Twitter integration -->
-        <meta property="og:title" content=""/>
-        <meta property="og:image" content=""/>
-        <meta property="og:url" content=""/>
-        <meta property="og:site_name" content=""/>
-        <meta property="og:description" content=""/>
-        <meta name="twitter:title" content="" />
-        <meta name="twitter:image" content="" />
-        <meta name="twitter:url" content="" />
-        <meta name="twitter:card" content="" />
+  
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
-        <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body id="index">
+		
+	<div class="fh5co-loader"></div>
+	
+	<div id="page">
+<nav class="fh5co-nav" role="navigation">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-2">
+       </div>
+      <div class="col-xs-10 text-right menu-1">
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+
+ <li><a href=https://docs.google.com/forms/d/e/1FAIpQLSdujdXQWS-uGYEYhOZcDltZ3mu99keoDqens84QMBQj693c0w/viewform?usp=dialog>Confirmar Presença</a></li>
+
+          <li><a href="about.html">Lista de Presentes</a></li>
         
-        <!-- Animate.css -->
-        <link rel="stylesheet" href="css/animate.css">
-        <!-- Icomoon Icon Fonts-->
-        <link rel="stylesheet" href="css/icomoon.css">
-        <!-- Bootstrap  -->
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <!-- Magnific Popup -->
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <!-- Owl Carousel  -->
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-        <!-- Theme style  -->
-        <link rel="stylesheet" href="css/style.css">
-
-        <!-- Modernizr JS -->
-        <script src="js/modernizr-2.6.2.min.js"></script>
-        <!-- FOR IE9 below -->
-        <!--[if lt IE 9]>
-        <script src="js/respond.min.js"></script>
-        <![endif]-->
-
-        <!-- CSS Personalizado -->
-<style>
-    /* Estilos da capa */
-    .fh5co-cover {
-        background-size: cover;
-        background-position: center;
-        height: 100vh; /* Altura total da capa */
-        position: relative; /* Permite posicionar elementos */
-    }
-
-    /* Título principal (Rita & Francisco) */
-    header h1 {
-        margin-top: 10px; /* Posição no topo */
-        font-size: 3rem; /* Aumentar tamanho para destaque */
-        color: white; /* Melhor contraste com a fotografia de capa */
-        position: absolute; /* Coloca no topo */
-        top: 5%; /* Posiciona próximo ao topo */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%); /* Corrige centralização */
-        z-index: 2; /* Fica acima da capa */
-    }
-
-    /* Subtítulo (Querida família...) */
-    header h2 {
-        margin-top: 30px; /* Subtítulo ajustado */
-        font-size: 1.8rem;
-        line-height: 1.5;
-        color: white;
-        position: absolute; /* Permite posicionamento */
-        top: 20%; /* Eleva o texto na capa */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%);
-        z-index: 2;
-    }
-
-    /* Countdown */
-    .simply-countdown {
-        font-size: 1.5rem; /* Ajusta tamanho */
-        color: white;
-        position: absolute; /* Alinha sobre a capa */
-        top: 40%; /* Logo abaixo do subtítulo */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%);
-        z-index: 2;
-    }
-
-    /* Botão "Já está marcado na vossa agenda?" */
-    header .btn {
-        position: absolute; /* Sobre a capa */
-        top: 55%; /* Posiciona abaixo do countdown */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%);
-        padding: 10px 20px;
-        background-color: rgb(246, 231, 231);
-        color: rgb(190, 94, 96);
-        font-size: 1rem;
-        border-radius: 5px;
-        z-index: 2; /* Mantém acima da capa */
-    }
-
-    /* Responsividade para telemóveis */
-    @media (max-width: 768px) {
-        .fh5co-cover {
-            height: auto; /* Ajusta capa para telemóveis */
-        }
-
-        header h1 {
-            font-size: 2rem; /* Reduz tamanho no telemóvel */
-            top: 5%; /* Posição no topo */
-        }
-
-        header h2 {
-            font-size: 1.2rem; /* Reduz tamanho no telemóvel */
-            top: 15%; /* Ajusta posição do subtítulo */
-        }
-
-        .simply-countdown {
-            font-size: 1rem; /* Countdown menor */
-            top: 35%; /* Ajusta posição */
-        }
-
-        header .btn {
-            font-size: 0.9rem; /* Botão menor */
-            top: 50%; /* Ajusta botão no telemóvel */
-        }
-    }
-</style>
-
-
-
-    </head>
-    <body id="index">
-        <div class="fh5co-loader"></div>
-        <div id="page">
-            <nav class="fh5co-nav" role="navigation">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-2"></div>
-                        <div class="col-xs-10 text-right menu-1">
-                            <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdujdXQWS-uGYEYhOZcDltZ3mu99keoDqens84QMBQj693c0w/viewform?usp=dialog">Confirmar Presença</a></li>
-                                <li><a href="about.html">Lista de Presentes</a></li>
-                                <li class="has-dropdown"><a href="gallery.html">A Nossa História</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+          <li class="has-dropdown">
+            <a href="gallery.html">A Nossa História</a>
+                      </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center">
                 <div class="display-t">
                     <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                        <h1>Rita &amp; Francisco</h1>
-                        <h2>Querida fam&iacute;lia e queridos amigos, vamos casar! Enfim, este namoro que come&ccedil;ou por falar crioulo, em Santo Ant&atilde;o, vai tornar-se casamento de Santo Ant&oacute;nio!</h2>
+
+                        <h1 style="margin-top: -20px;">Rita &amp; Francisco</h1>
+
+<br>
+<br>
+
+
+                        <h2 style="margin-top: +200px;">Querida familia e queridos amigos, vamos casar! Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo Antonio!</h2>
                         <div class="simply-countdown simply-countdown-one"></div>
-                        <p>
-                            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco&dates=20250613T140000Z/20250613T235900Z&details=Querida+fam&iacute;lia+e+queridos+amigos,+vamos+casar!+Enfim,+este+namoro+que+come&ccedil;ou+por+falar+crioulo,+em+Santo+Ant&atilde;o,+vai+tornar-se+casamento+de+Santo+Ant&oacute;nio!+O+nosso+Dia+d&#39;Czmente+ser&aacute;+a+13+de+Junho+de+2025,+Sexta-feira,+&agrave;s+15h,+na+Igreja+de+Santa+Maria+de+Loures.&location=https://maps.app.goo.gl/aBkcbi4PF5BHTTP57?g_st=iw&sf=true&output=xml" 
-                               class="btn btn-default btn-sm" 
-                               target="_blank">
-                               J&aacute; est&aacute; marcado na vossa Agenda?
-                            </a>
+                          <p>
+                           <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco&dates=20250613T140000Z/20250613T235900Z&details=Querida+familia+e+queridos+amigos,+vamos+casar!+Enfim,+este+namoro+que+comecou+por+falar+crioulo,+em+Santo+Antao,+vai+tornar-se+casamento+de+Santo+Antonio!+O+nosso+Dia+d'Czmente+sera+a+13+de+Junho+de+2025,+Sexta-feira,+as+15h,+na+Igreja+de+Santa+Maria+de+Loures.&location=https://maps.app.goo.gl/aBkcbi4PF5BHTTP57?g_st=iw&sf=true&output=xml" 
+   class="btn btn-default btn-sm" 
+   target="_blank" 
+   style="text-decoration: none; background-color: rgb(246, 231, 231) !important; color: rgb(190, 94, 96) !important;">
+   Já está marcado na vossa Agenda?
+</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </header>
 
 
+
 <div id="fh5co-couple-story">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-                <h2 style="color: rgb(190, 94, 96);">Confirmar Presen&ccedil;a</h2>
-                <p>Enfim, este namoro que come&ccedil;ou por falar crioulo, em Santo Ant&atilde;o, vai tornar-se casamento de Santo Ant&oacute;nio!</p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdujdXQWS-uGYEYhOZcDltZ3mu99keoDqens84QMBQj693c0w/viewform?usp=dialog" 
-                   class="btn btn-default" 
-                   target="_blank" 
-                   style="text-decoration: none; width: 200px; height: 50px; line-height: 50px; display: inline-block; text-align: center; vertical-align: middle; padding: 0; background-color: rgb(190, 94, 96); color: rgb(246, 231, 231);">
-                   Confirmar presen&ccedil;a
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+<h2 style="color: rgb(190, 94, 96);">Confirmar Presença</h2>					<p>Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo Antonio!</p>
+
+<a href=https://docs.google.com/forms/d/e/1FAIpQLSdujdXQWS-uGYEYhOZcDltZ3mu99keoDqens84QMBQj693c0w/viewform?usp=dialog 
+   class="btn btn-default" 
+   target="_blank" 
+   style="text-decoration: none; width: 200px; height: 50px; line-height: 50px; display: inline-block; text-align: center; vertical-align: middle; padding: 0; background-color: rgb(190, 94, 96); color: rgb(246, 231, 231);">
+   Confirmar presença
+</a>				</div>
+			</div>
+
+		</div>
+	</div>
+
+	
 
 <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg); height: 650px; background-size: cover; padding-top: 10px;">
     <div class="overlay"></div>
@@ -202,13 +130,15 @@
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
             </div>
         </div>
-        <div class="row" style="margin-top: 20px;">
+        <div class="row" style="margin-top: 20px;"> <!-- Ajuste para 20px -->
             <div class="display-t">
                 <div class="display-tc">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="col-md-6 col-sm-6 text-center">
                             <div class="event-wrap animate-box">
+                                
                                 <h3 style="color: rgb(246, 231, 231); font-weight: bold;">Missa</h3>
+
                                 <div class="event-col">
                                     <i class="icon-clock"></i>
                                     <span>3:00 PM</span>
@@ -217,21 +147,22 @@
                                     <i class="icon-calendar"></i>
                                     <span>Sexta-Feira, 13 de Junho de 2025</span>
                                 </div>
-                                <p>O nosso Dia d&#39;Czmente ser&aacute; a 13 de Junho de 2025, Sexta-feira, &agrave;s 15h, na <a href="https://maps.app.goo.gl/BaoApExr5uGjmuEx7" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Igreja de Santa Maria de Loures</a>.</p>
-                                <p>A tradi&ccedil;&atilde;o diz que a noiva se pode atrasar... mas esta n&atilde;o! Por isso, sejam pontuais ou arriscam-se a fazer uma entrada mais &eacute;pica do que os noivos!</p>
+                                <<p>O nosso Dia d'Czmente será a 13 de Junho de 2025, Sexta-feira, às 15h, na <a href="https://maps.app.goo.gl/BaoApExr5uGjmuEx7" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Igreja de Santa Maria de Loures</a>.</p>
+                                <p>A tradição diz que a noiva se pode atrasar... mas esta não! Por isso, sejam pontuais ou arriscam-se a fazer uma entrada mais épica do que os noivos!</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 text-center">
                             <div class="event-wrap animate-box">
-                                <h3 style="color: rgb(246, 231, 231); font-weight: bold;">Copo de &Aacute;gua</h3>
-                                <div class="event-col"></div>
+                                <h3 style="color: rgb(246, 231, 231); font-weight: bold;">Copo de Água</h3>
+                                <div class="event-col">
+                                                                    </div>
                                 <div class="event-col">
                                     <i class="icon-calendar"></i>
                                     <span>Sexta-feira, 13 de</span>
                                     <span>Junho, 2025</span>
                                 </div>
-                                <p>A Festa continua na <a href="https://maps.app.goo.gl/E5oFPAb3w1sCDLX56" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Quinta do Vale, Santo Ant&atilde;o do Tojal</a>.</p>
-                                <p>Relembramos que a quinta tem poucos lugares de estacionamento. O amor n&atilde;o tem limites, mas o estacionamento da quinta sim – por isso, pedimos que se juntem em poucos carros ou venham de Uber (o motorista n&atilde;o precisa de convite)!</p>
+                                <p>A Festa continua na <a href="https://maps.app.goo.gl/E5oFPAb3w1sCDLX56" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Quinta do Vale, Santo Antão do Tojal</a>.</p>
+                                <p>Relembramos que a quinta tem poucos lugares de estacionamento. O amor não tem limites, mas o estacionamento da quinta sim – por isso, pedimos que se juntem em poucos carros ou venham de Uber (o motorista não precisa de convite)!</p>
                             </div>
                         </div>
                     </div>
@@ -241,6 +172,7 @@
     </div>
 </div>
 
+	
 <div id="fh5co-couple">
     <div class="container">
         <div class="row">
@@ -250,7 +182,7 @@
                     <div class="b-c b-text-c b-s b-s-t60 b-s-b60 b-cs cf">
                         <p class="wnd-align-center">
                             <font class="wnd-font-size-140" style="">
-                                <em>&#171;Por isso, o homem deixar&aacute; pai e m&atilde;e, para se unir &agrave; sua esposa, e os dois ser&atilde;o uma s&oacute; carne.&#187;</em>
+                                <em>«Por isso, o homem deixará pai e mãe, para se unir à sua esposa, e os dois serão uma só carne.»</em>
                                 <font class="wnd-font-size-70">Gen 2, 24</font>
                             </font>
                             <br>
@@ -266,7 +198,8 @@
                 </div>
                 <div class="desc-groom">
                     <span style="font-size: 2em;"><strong>Francisco Costal</strong></span>
-                    <p>H&aacute; quem o trate por Costal, Chiquinho ou at&eacute; Kiko. Foi Escuteiro, mostrando o seu esp&iacute;rito solid&aacute;rio. Autoproclamado f&atilde; n&ordm; 1 do Benfica, sonha com a presid&ecirc;ncia do clube mas enquanto n&atilde;o acontece &eacute; m&eacute;dico psiquiatra. Nos seus tempos livres podem encontr&aacute;-lo com a sua noiva, Rita, a fazer sestas ao ar livre ou a comer gelados. Cabo Verde tem um significado especial, pelas suas ra&iacute;zes e pelos bons momentos l&aacute; vividos.</p>
+
+                    <p>Há quem o trate por Costal, Chiquinho ou até Kiko. Foi Escuteiro, mostrando o seu espírito solidário. Autoproclamado fã nº 1 do Benfica, sonha com a presidência do clube mas enquanto não acontece é médico psiquiatra. Nos seus tempos livres podem encontrá-lo com a sua noiva, Rita, a fazer sestas ao ar livre ou a comer gelados. Cabo Verde tem um significado especial, pelas suas raízes e pelos bons momentos lá vividos.</p>
                 </div>
             </div>
             <p class="heart text-center"><i class="icon-heart2"></i></p>
@@ -276,7 +209,7 @@
                 </div>
                 <div class="desc-bride">
                     <span style="font-size: 2em;"><strong>Rita Menezes</strong></span>
-                    <p>Conhecida por Tita, Rota ou Tita Rota (cortesia do autocorretor ou em homenagem a Manta Rota). &Eacute; Guia de Portugal e est&aacute; sempre atenta ao pr&oacute;ximo. Multifacetada, &eacute; “inform&aacute;tica ambiental”, mas tamb&eacute;m brilha na representa&ccedil;&atilde;o (com uma passagem memor&aacute;vel pelo McDonald&#39;s) e na m&uacute;sica, gra&ccedil;as &agrave; sua voz de rouxinol. Com o seu noivo Francisco, partilha o gosto por concertos, bons jantares (preferencialmente num indiano) e boas sestas.</p>
+                    <p>Conhecida por Tita, Rota ou Tita Rota (cortesia do autocorretor ou em homenagem a Manta Rota). É Guia de Portugal e está sempre atenta ao próximo. Multifacetada é “informática ambiental”, mas também brilha na representação (com uma passagem memorável pelo McDonald's) e na música, graças à sua voz de rouxinol. Com o seu noivo Francisco, partilha o gosto por concertos, bons jantares (preferencialmente num indiano) e boas sestas.</p>
                 </div>
             </div>
         </div>
