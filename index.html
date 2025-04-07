@@ -17,9 +17,9 @@
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Estilos Internos para Ajustes de Mobile -->
+  <!-- Estilos Internos para Centralização e Ajustes -->
   <style>
-    /* Código que enviei anteriormente vai aqui */
+    /* Centralização do Header */
     #fh5co-header .display-t {
       display: table;
       width: 100%;
@@ -29,37 +29,42 @@
     #fh5co-header .display-tc {
       display: table-cell;
       vertical-align: middle;
-      text-align: center;
+      text-align: center; /* Alinha o texto horizontalmente */
     }
 
+    /* Garantir centralização do container */
+    #fh5co-header .container {
+      margin: 0 auto; /* Centraliza horizontalmente */
+      max-width: 90%; /* Limita largura para evitar corte no conteúdo */
+    }
+
+    /* Ajustes para Mobile */
     @media screen and (max-width: 768px) {
       #fh5co-header {
-        text-align: left;
-        padding-left: 15px;
+        text-align: center; /* Alinha ao centro para dispositivos móveis */
+        padding: 15px; /* Adiciona espaçamento interno */
         background-size: cover;
         background-position: center;
         height: auto;
-        padding: 20px;
       }
       #fh5co-header h1 {
-        font-size: 24px;
+        font-size: 24px; /* Ajusta tamanho do título */
         margin-top: 10px;
       }
       #fh5co-header h2 {
-        font-size: 16px;
-        margin-top: 5px;
+        font-size: 16px; /* Ajusta tamanho do subtítulo */
+        margin-top: 5px; /* Mantém espaçamento correto */
       }
       .simply-countdown {
-        display: flex;
+        display: flex; /* Permite alinhar na mesma linha */
         justify-content: center;
-        transform: scale(0.7);
+        transform: scale(0.7); /* Reduz o tamanho para economizar espaço */
         margin-top: 10px;
       }
       #fh5co-header .btn {
-        display: block;
-        margin-top: 10px;
+        display: inline-block;
+        margin-top: 10px; /* Espaço suficiente abaixo do countdown */
         position: relative;
-        z-index: 2;
       }
     }
   </style>
@@ -110,8 +115,8 @@
         </div>
       </div>
     </header>
-  
 
+  
  
  
  <div id="fh5co-couple-story">
