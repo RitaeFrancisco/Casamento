@@ -405,11 +405,6 @@ h1, h2, h3, h4, h5, h6, figure {
     width: 100%;
     margin-bottom: 20px;
   }
-
-  /* Ajustes no espaço entre elementos */
-  #fh5co-couple .fh5co-heading {
-    margin-top: 40px; /* ou mais, se quiseres mais espaço */
-  }
 }
 
 .fh5co-cover.fh5co-cover-sm .display-t,
