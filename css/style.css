@@ -1059,11 +1059,6 @@ body {
   margin: 0 auto;
   position: relative;
 }
-@media screen and (max-width: 768px) {
-  .couple-wrap {
-    width: 100%;
-  }
-}
 
 .heart {
   position: absolute;
@@ -1093,11 +1088,7 @@ body {
   width: 50%;
   float: left;
 }
-@media screen and (max-width: 768px) {
-  .couple-half {
-    width: 100%;
-  }
-}
+
 .couple-half h3 {
   font-family: "Sacramento", Arial, serif;
   color: #F14E95;
