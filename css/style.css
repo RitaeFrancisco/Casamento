@@ -105,33 +105,150 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
-/* Responsividade para dispositivos móveis */
+/* Ajustes Gerais */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", Arial, sans-serif;
+}
+
+/* Navegação */
+.fh5co-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+  padding: 40px 0;
+}
 @media screen and (max-width: 768px) {
   .fh5co-nav {
     padding: 20px 0;
   }
-  .menu-1 ul {
+}
+.fh5co-nav ul {
+  margin: 2px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+.fh5co-nav ul li {
+  display: inline;
+  margin: 0;
+}
+.fh5co-nav ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 30px 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.fh5co-nav ul li a:hover {
+  color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .fh5co-nav .menu-1 ul {
     display: block;
     text-align: center;
   }
-  .menu-1 ul li {
+  .fh5co-nav .menu-1 ul li {
     display: block;
     margin: 10px 0;
   }
+}
+
+/* Header / Capa */
+.fh5co-cover {
+  height: 900px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
   .fh5co-cover {
     height: auto;
+    background-size: contain; /* Ajusta para caber no ecrã */
     padding: 20px;
   }
-  h1, h2, h3 {
-    font-size: smaller;
+}
+.fh5co-cover .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.fh5co-cover h1 {
+  font-size: 40px;
+  margin-top: -20px;
+}
+@media screen and (max-width: 768px) {
+  .fh5co-cover h1 {
+    font-size: 24px;
+    margin-top: 20px; /* Move o título para baixo */
     text-align: center;
   }
-  .btn {
-    width: 100%;
-    margin: 10px auto;
-    display: block;
+}
+
+/* Countdown */
+.simply-countdown {
+  margin: 20px auto;
+}
+@media screen and (max-width: 768px) {
+  .simply-countdown {
+    transform: scale(0.7); /* Reduz o tamanho */
+    margin-top: 20px;
   }
 }
+
+/* Imagens Responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgb(246, 231, 231);
+  color: rgb(190, 94, 96);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+  .btn {
+    display: block;
+    width: 100%; /* Botão ocupa toda a largura no mobile */
+    margin: 10px auto;
+  }
+}
+
+/* Missa e Copo de Água */
+.fh5co-event {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.fh5co-event .divisao {
+  width: 48%;
+  text-align: center;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+@media screen and (max-width: 768px) {
+  .fh5co-event {
+    flex-direction: column; /* Empilha os itens no mobile */
+  }
+  .fh5co-event .divisao {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
