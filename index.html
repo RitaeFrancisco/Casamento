@@ -19,81 +19,87 @@
 
   <!-- Estilos Internos para Centralização e Ajustes -->
   <style>
+/* Estilos Gerais */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", Arial, sans-serif;
+}
 
-     /* Garantir que o Header esteja centralizado corretamente */
+/* Header - Centralização e Ajustes */
+#fh5co-header {
+  margin: 0 auto; /* Centraliza o header horizontalmente */
+  position: relative; /* Garante o posicionamento correto */
+  width: 100%; /* O header ocupa 100% da largura */
+  padding: 0; /* Remove qualquer padding desnecessário */
+  box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+  text-align: center; /* Garante alinhamento central em todas as telas */
+}
+
+#fh5co-header .container {
+  margin: 0 auto; /* Centraliza o container */
+  padding: 0 15px; /* Espaço interno lateral para evitar colagem */
+  max-width: 90%; /* Limita a largura para evitar deslocamento do conteúdo */
+}
+
+#fh5co-header .display-t {
+  display: table;
+  width: 100%;
+  height: auto;
+}
+
+#fh5co-header .display-tc {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Títulos */
+#fh5co-header h1 {
+  font-size: 40px; /* Tamanho padrão do título */
+  margin: 20px 0 10px; /* Espaçamento acima e abaixo */
+}
+
+#fh5co-header h2 {
+  font-size: 20px; /* Tamanho padrão do subtítulo */
+  margin-bottom: 15px; /* Espaçamento inferior */
+}
+
+/* Botão e Countdown */
+.simply-countdown {
+  display: flex; /* Permite alinhar na mesma linha */
+  justify-content: center; /* Centraliza horizontalmente */
+  transform: scale(0.7); /* Reduz o tamanho para economizar espaço */
+  margin-top: 10px;
+}
+
+#fh5co-header .btn {
+  display: inline-block;
+  margin-top: 10px; /* Espaço suficiente abaixo do countdown */
+  position: relative;
+  z-index: 2; /* Garante que o botão permaneça visível */
+}
+
+/* Ajustes para Mobile */
+@media screen and (max-width: 768px) {
   #fh5co-header {
-    margin: 0 auto; /* Centraliza o header horizontalmente */
-    position: relative; /* Garante o posicionamento correto */
-    width: 100%; /* Garante que use 100% da largura disponível */
-    padding: 0; /* Remove qualquer padding desnecessário */
-    box-sizing: border-box; /* Inclui padding e bordas no cálculo de largura */
+    padding: 10px; /* Espaço interno no telemóvel */
+    background-size: cover;
+    background-position: center;
+    height: auto; /* Ajusta dinamicamente a altura */
   }
 
-  /* Ajustes para o container do Header */
+  #fh5co-header h1 {
+    font-size: 24px; /* Ajusta o tamanho do título */
+  }
+
+  #fh5co-header h2 {
+    font-size: 16px; /* Ajusta o tamanho do subtítulo */
+  }
+
   #fh5co-header .container {
-    margin: 0 auto; /* Centraliza o container dentro do header */
-    padding: 0 0px; /* Espaçamento interno para evitar colagem nas bordas */
-    max-width: 100%; /* Garante que o container não extrapole a largura */
+    padding: 0 10px; /* Garante espaço lateral adequado no mobile */
   }
-
-  /* Configurações para Mobile */
-  @media screen and (max-width: 768px) {
-    #fh5co-header {
-      text-align: center; /* Garante alinhamento central no mobile */
-      padding: 0px;
-    }
-    #fh5co-header .container {
-      padding: 0 0px; /* Espaço extra para evitar bordas apertadas no mobile */
-    }
-  }
-    /* Centralização do Header */
-    #fh5co-header .display-t {
-      display: table;
-      width: 100%;
-      height: auto;
-    }
-
-    #fh5co-header .display-tc {
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center; /* Alinha o texto horizontalmente */
-    }
-
-    /* Garantir centralização do container */
-    #fh5co-header .container {
-      margin: 0 auto; /* Centraliza horizontalmente */
-      max-width: 90%; /* Limita largura para evitar corte no conteúdo */
-    }
-
-    /* Ajustes para Mobile */
-    @media screen and (max-width: 768px) {
-      #fh5co-header {
-        text-align: center; /* Alinha ao centro para dispositivos móveis */
-        padding: 5px; /* Adiciona espaçamento interno */
-        background-size: cover;
-        background-position: center;
-        height: auto;
-      }
-      #fh5co-header h1 {
-        font-size: 24px; /* Ajusta tamanho do título */
-        margin-top: 10px;
-      }
-      #fh5co-header h2 {
-        font-size: 16px; /* Ajusta tamanho do subtítulo */
-        margin-top: 5px; /* Mantém espaçamento correto */
-      }
-      .simply-countdown {
-        display: flex; /* Permite alinhar na mesma linha */
-        justify-content: center;
-        transform: scale(0.7); /* Reduz o tamanho para economizar espaço */
-        margin-top: 10px;
-      }
-      #fh5co-header .btn {
-        display: inline-block;
-        margin-top: 10px; /* Espaço suficiente abaixo do countdown */
-        position: relative;
-      }
-    }
+}
   </style>
 
   <!-- Modernizr -->
