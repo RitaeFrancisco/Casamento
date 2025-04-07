@@ -367,7 +367,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
   /* Ajuste no contador */
   .simply-countdown {
-    transform: scale(0.7); /* Ajusta o tamanho do contador */
+    transform: scale(0.8); /* Ajusta o tamanho do contador */
     margin-top: 20px;
   }
 }
