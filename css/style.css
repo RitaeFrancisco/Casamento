@@ -336,7 +336,7 @@ h1, h2, h3, h4, h5, h6, figure {
   .fh5co-cover {
     height: auto; /* Permite que a altura se ajuste dinamicamente */
     background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
-    background-position: center; /* Centraliza a imagem */
+    background-position: left; /* Centraliza a imagem */
   }
 
   /* Ajustes da tabela de alinhamento */
