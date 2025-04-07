@@ -43,7 +43,7 @@
 
     #fh5co-header h1 {
       font-size: 40px;
-      margin: 20px 0 10px;
+      margin: 60px 0 200px;
     }
 
     #fh5co-header h2 {
@@ -54,7 +54,7 @@
     .simply-countdown {
       display: flex;
       justify-content: center;
-      transform: scale(0.7);
+      transform: scale(1);
       margin-top: 10px;
     }
 
@@ -94,27 +94,24 @@
         }
      }
 
-   
-
-@media screen and (max-width: 768px) {
-  /* Countdown ligeiramente para a esquerda */
-  .simply-countdown {
-    justify-content: flex-start !important; /* Alinha os balões à esquerda */
-    padding-left: 20px !important; /* Move tudo um pouco para a esquerda */
-    transform: scale(0.7) !important;
-    margin-top: 10px !important;
+   @media screen and (max-width: 768px) {
+  /* Texto */
+  #fh5co-header h1,
+  #fh5co-header h2 {
+    text-align: center !important;
+    margin-left: 0px !important;
+    margin-right: 50px !important;
+    max-width: calc(100% - 50px) !important;
   }
 
-  /* Botão também mais para a esquerda */
-  #fh5co-header .btn {
-    margin-left: 20px !important; /* Move o botão para a esquerda */
-    margin-top: 10px !important;
-    display: inline-block !important;
+  #fh5co-header h1 {
+    font-size: 34px !important;
   }
-}
 
-
-
+  #fh5co-header h2 {
+    font-size: 18px !important;
+  }
+      }
 
   </style>
 
