@@ -1,71 +1,103 @@
 <!DOCTYPE html>
- <html class="no-js">
- <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Casamento Rita & Francisco</title>
- 
-   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700" rel="stylesheet" type="text/css">
-   <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
- 
-   <!-- CSS -->
-   <link rel="stylesheet" href="css/animate.css">
-   <link rel="stylesheet" href="css/icomoon.css">
-   <link rel="stylesheet" href="css/bootstrap.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-   <link rel="stylesheet" href="css/owl.carousel.min.css">
-   <link rel="stylesheet" href="css/owl.theme.default.min.css">
-   <link rel="stylesheet" href="css/style.css">
- 
-   <!-- Modernizr -->
-   <script src="js/modernizr-2.6.2.min.js"></script>
- </head>
- <body id="index">
-   <div class="fh5co-loader"></div>
-   <div id="page">
-     <nav class="fh5co-nav" role="navigation">
-       <div class="container">
-         <div class="row">
-           <div class="col-xs-2"></div>
-           <div class="col-xs-10 text-right menu-1">
-             <ul>
-               <li class="active"><a href="index.html">Home</a></li>
-               <li><a href="https://docs.google.com/forms/...">Confirmar Presença</a></li>
-               <li><a href="about.html">Lista de Presentes</a></li>
-               <li class="has-dropdown">
-                 <a href="gallery.html">A Nossa História</a>
-               </li>
-             </ul>
-           </div>
-         </div>
-       </div>
-     </nav>
- 
-     <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
-       <div class="container">
-         <div class="row">
-           <div class="col-md-8 col-md-offset-2 text-center">
-             <div class="display-t">
-               <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                 <h1 style="margin-top: -20px;">Rita &amp; Francisco</h1>
-                 <br>
-                 <br>
-                 <h2 style="margin-top: 200px;">Querida familia e queridos amigos, vamos casar! Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo Antonio!</h2>
-                 <div class="simply-countdown simply-countdown-one"></div>
-                 <p>
-                   <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco..."
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casamento Rita & Francisco</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Estilos Internos (Mobile Ajustes) -->
+  <style>
+    /* Ajuste da Imagem da Capa */
+    @media screen and (max-width: 768px) {
+      #fh5co-header {
+        background-size: cover;
+        background-position: center;
+        height: 300px; /* Reduz a altura */
+      }
+    }
+
+    /* Título Responsivo */
+    @media screen and (max-width: 768px) {
+      #fh5co-header h1 {
+        font-size: 24px; /* Tamanho ajustado */
+        margin-top: 20px; /* Espaçamento corrigido */
+      }
+      #fh5co-header h2 {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+
+    /* Countdown Responsivo */
+    @media screen and (max-width: 768px) {
+      .simply-countdown {
+        display: inline-block; /* Alinha na mesma linha */
+        transform: scale(0.8); /* Reduz o tamanho */
+        margin-top: 20px;
+      }
+    }
+  </style>
+
+  <!-- Modernizr -->
+  <script src="js/modernizr-2.6.2.min.js"></script>
+</head>
+<body id="index">
+  <div class="fh5co-loader"></div>
+  <div id="page">
+    <nav class="fh5co-nav" role="navigation">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2"></div>
+          <div class="col-xs-10 text-right menu-1">
+            <ul>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="https://docs.google.com/forms/...">Confirmar Presença</a></li>
+              <li><a href="about.html">Lista de Presentes</a></li>
+              <li class="has-dropdown">
+                <a href="gallery.html">A Nossa História</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header id="fh5co-header" class="fh5co-cover" role="banner"
+            style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 text-center">
+            <div class="display-t">
+              <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                <h1>Rita &amp; Francisco</h1>
+                <h2>Querida família e queridos amigos, vamos casar!</h2>
+                <div class="simply-countdown simply-countdown-one"></div>
+                <p>
+                  <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco..."
                      class="btn btn-default btn-sm" 
                      target="_blank" 
                      style="background-color: rgb(246, 231, 231); color: rgb(190, 94, 96);">
                      Já está marcado na vossa Agenda?
-                   </a>
-                 </p>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
-     </header>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
  
  
  
