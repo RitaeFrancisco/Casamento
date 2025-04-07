@@ -19,91 +19,82 @@
 
   <!-- Estilos Internos para Centralização e Ajustes -->
   <style>
-    /* Reset de margens e preenchimentos */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Work Sans", Arial, sans-serif;
-    }
+/* Estilos Gerais */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans", Arial, sans-serif;
+}
 
-    /* Cabeçalho - Centralização */
-    #fh5co-header {
-      margin: 0;
-      position: relative;
-      width: 100%;
-      padding: 0;
-      box-sizing: border-box;
-      background-size: cover;
-      background-position: center center;
-      text-align: center;
-      height: 100vh; /* Tamanho da tela */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+/* Header - Ajuste Completo */
+#fh5co-header {
+  margin: 0;
+  position: relative;
+  width: 100vw; /* Usa toda a largura do visor */
+  padding: 0;
+  box-sizing: border-box; /* Inclui bordas e padding no cálculo */
+  text-align: center; /* Centraliza conteúdo */
+  background-size: cover;
+  background-position: center center; /* Centraliza imagem da capa */
+}
 
-    /* Ajustes de conteúdo */
-    #fh5co-header .container {
-      padding: 0 15px;
-    }
+/* Container Interno */
+#fh5co-header .container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 100%; /* Permite que o conteúdo use toda a largura */
+}
 
-    /* Texto do Cabeçalho */
-    #fh5co-header h1 {
-      font-size: 40px;
-      margin: 20px 0;
-    }
+/* Títulos */
+#fh5co-header h1 {
+  font-size: 40px;
+  margin: 20px 0 10px;
+}
 
-    #fh5co-header h2 {
-      font-size: 20px;
-      margin-bottom: 15px;
-    }
+#fh5co-header h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
 
-    /* Estilo para o Countdown */
-    .simply-countdown {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+/* Botão e Countdown */
+.simply-countdown {
+  display: flex;
+  justify-content: center;
+  transform: scale(0.7);
+  margin-top: 10px;
+}
 
-    /* Botão */
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 25px;
-      font-size: 14px;
-      background-color: rgb(246, 231, 231);
-      color: rgb(190, 94, 96);
-      text-decoration: none;
-      border: 2px solid rgb(190, 94, 96);
-      border-radius: 5px;
-    }
+#fh5co-header .btn {
+  display: inline-block;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
 
-    /* Ajustes para dispositivos móveis */
-    @media screen and (max-width: 768px) {
-      #fh5co-header {
-        background-size: contain; /* Ajusta a imagem no fundo */
-        background-position: top center;
-        padding: 10px;
-      }
+/* Ajustes para Mobile */
+@media screen and (max-width: 768px) {
+  #fh5co-header {
+    padding: 10px; /* Espaço interno adicional no mobile */
+    width: 100vw; /* Garante uso total do visor */
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+  }
 
-      #fh5co-header h1 {
-        font-size: 28px;
-      }
+  #fh5co-header h1 {
+    font-size: 24px;
+  }
 
-      #fh5co-header h2 {
-        font-size: 16px;
-      }
+  #fh5co-header h2 {
+    font-size: 16px;
+  }
 
-      .simply-countdown {
-        margin-top: 10px;
-        font-size: 16px;
-      }
+  #fh5co-header .container {
+    padding: 0 10px; /* Espaço interno no mobile */
+  }
+}
 
-      .btn {
-        font-size: 12px;
-        padding: 10px 20px;
-      }
-    }
+
   </style>
 
   <!-- Modernizr -->
@@ -130,7 +121,8 @@
       </div>
     </nav>
 
-    <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+    <header id="fh5co-header" class="fh5co-cover" role="banner"
+            style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
@@ -140,8 +132,9 @@
                 <h2>Querida família e queridos amigos, vamos casar! Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo António!</h2>
                 <div class="simply-countdown simply-countdown-one"></div>
                 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco..."
-                   class="btn" 
-                   target="_blank">
+                   class="btn btn-default btn-sm"
+                   target="_blank"
+                   style="background-color: rgb(246, 231, 231); color: rgb(190, 94, 96);">
                    Já está marcado na vossa Agenda?
                 </a>
               </div>
@@ -151,113 +144,120 @@
       </div>
     </header>
 
-    <div id="fh5co-couple-story">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-            <h2>Confirmar Presença</h2>
-            <p>Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo Antonio!</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdujdXQWS-uGYEYhOZcDltZ3mu99keoDqens84QMBQj693c0w/viewform?usp=dialog"
-               class="btn" 
-               target="_blank">
-               Confirmar presença
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg); height: 650px; background-size: cover; padding-top: 10px;">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-          </div>
-        </div>
-        <div class="row" style="margin-top: 20px;"> <!-- Ajuste para 20px -->
-          <div class="display-t">
-            <div class="display-tc">
-              <div class="col-md-10 col-md-offset-1">
-                <div class="col-md-6 col-sm-6 text-center">
-                  <div class="event-wrap animate-box">
-                    <h3 style="color: rgb(246, 231, 231); font-weight: bold;">Missa</h3>
-                    <div class="event-col">
-                      <i class="icon-clock"></i>
-                      <span>3:00 PM</span>
-                    </div>
-                    <div class="event-col">
-                      <i class="icon-calendar"></i>
-                      <span>Sexta-Feira, 13 de Junho de 2025</span>
-                    </div>
-                    <p>O nosso Dia d'Czmente será a 13 de Junho de 2025, Sexta-feira, às 15h, na <a href="https://maps.app.goo.gl/BaoApExr5uGjmuEx7" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Igreja de Santa Maria de Loures</a>.</p>
-                    <p>A tradição diz que a noiva se pode atrasar... mas esta não! Por isso, sejam pontuais ou arriscam-se a fazer uma entrada mais épica do que os noivos!</p>
-                  </div>
-                </div>
-                <div class="col-md-6 col-sm-6 text-center">
-                  <div class="event-wrap animate-box">
-                    <h3 style="color: rgb(246, 231, 231); font-weight: bold;">Copo de Água</h3>
-                    <div class="event-col">
-                    </div>
-                    <div class="event-col">
-                      <i class="icon-calendar"></i>
-                      <span>Sexta-feira, 13 de</span>
-                      <span>Junho, 2025</span>
-                    </div>
-                    <p>A Festa continua na <a href="https://maps.app.goo.gl/E5oFPAb3w1sCDLX56" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Quinta do Vale, Santo Antão do Tojal</a>.</p>
-                    <p>Relembramos que a quinta tem poucos lugares de estacionamento. O amor não tem limites, mas o estacionamento da quinta sim – por isso, pedimos que se juntem em poucos carros ou venham de Uber (o motorista não precisa de convite)!</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="fh5co-couple">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-            <h3>13 Junho, 2025 Lisboa</h3>
-            <p>
-              <div class="b-c b-text-c b-s b-s-t60 b-s-b60 b-cs cf">
-                <p class="wnd-align-center">
-                  <font class="wnd-font-size-140" style="">
-                    <em>«Por isso, o homem deixará pai e mãe, para se unir à sua esposa, e os dois serão uma só carne.»</em>
-                    <font class="wnd-font-size-70">Gen 2, 24</font>
-                  </font>
-                  <br>
-                </p>
-              </div>
-            </p>
-          </div>
-        </div>
-        <div class="couple-wrap animate-box">
-          <div class="couple-half">
-            <div class="groom">
-              <img src="images/groom.jpg" alt="groom" class="img-responsive">
-            </div>
-            <div class="desc-groom">
-              <span style="font-size: 2em;"><strong>Francisco Costal</strong></span>
-              <p>Há quem o trate por Costal, Chiquinho ou até Kiko. Foi Escuteiro, mostrando o seu espírito solidário. Autoproclamado fã nº 1 do Benfica, sonha com a presidência do clube mas enquanto não acontece é médico psiquiatra. Nos seus tempos livres podem encontrá-lo com a sua noiva, Rita, a fazer sestas ao ar livre ou a comer gelados. Cabo Verde tem um significado especial, pelas suas raízes e pelos bons momentos lá vividos.</p>
-            </div>
-          </div>
-          <p class="heart text-center"><i class="icon-heart2"></i></p>
-          <div class="couple-half">
-            <div class="bride">
-              <img src="images/bride.jpg" alt="groom" class="img-responsive">
-            </div>
-            <div class="desc-bride">
-              <span style="font-size: 2em;"><strong>Rita Menezes</strong></span>
-            
-
-                     <p>Conhecida por Tita, Rota ou Tita Rota (cortesia do autocorretor ou em homenagem a Manta Rota). É Guia de Portugal e está sempre atenta ao próximo. Multifacetada é “informática ambiental”, mas também brilha na representação (com uma passagem memorável pelo McDonald's) e na música, graças à sua voz de rouxinol. Com o seu noivo Francisco, partilha o gosto por concertos, bons jantares (preferencialmente num indiano) e boas sestas.</p>
+ 
+ 
+ 
+ <div id="fh5co-couple-story">
+  <div class="container">
+  <div class="row">
+  <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+ <h2 style="color: rgb(190, 94, 96);">Confirmar Presença</h2> <p>Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo Antonio!</p>
+ 
+ <a href=https://docs.google.com/forms/d/e/1FAIpQLSdujdXQWS-uGYEYhOZcDltZ3mu99keoDqens84QMBQj693c0w/viewform?usp=dialog
+    class="btn btn-default"
+    target="_blank"
+    style="text-decoration: none; width: 200px; height: 50px; line-height: 50px; display: inline-block; text-align: center; vertical-align: middle; padding: 0; background-color: rgb(190, 94, 96); color: rgb(246, 231, 231);">
+    Confirmar presença
+ </a> </div>
+  </div>
+ 
+  </div>
+  </div>
+ 
+ 
+ 
+ <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg); height: 650px; background-size: cover; padding-top: 10px;">
+     <div class="overlay"></div>
+     <div class="container">
+         <div class="row">
+             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+             </div>
+         </div>
+         <div class="row" style="margin-top: 20px;"> <!-- Ajuste para 20px -->
+             <div class="display-t">
+                 <div class="display-tc">
+                     <div class="col-md-10 col-md-offset-1">
+                         <div class="col-md-6 col-sm-6 text-center">
+                             <div class="event-wrap animate-box">
+ 
+                                 <h3 style="color: rgb(246, 231, 231); font-weight: bold;">Missa</h3>
+ 
+                                 <div class="event-col">
+                                     <i class="icon-clock"></i>
+                                     <span>3:00 PM</span>
+                                 </div>
+                                 <div class="event-col">
+                                     <i class="icon-calendar"></i>
+                                     <span>Sexta-Feira, 13 de Junho de 2025</span>
+                                 </div>
+                                 <<p>O nosso Dia d'Czmente será a 13 de Junho de 2025, Sexta-feira, às 15h, na <a href="https://maps.app.goo.gl/BaoApExr5uGjmuEx7" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Igreja de Santa Maria de Loures</a>.</p>
+                                 <p>A tradição diz que a noiva se pode atrasar... mas esta não! Por isso, sejam pontuais ou arriscam-se a fazer uma entrada mais épica do que os noivos!</p>
+                             </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6 text-center">
+                             <div class="event-wrap animate-box">
+                                 <h3 style="color: rgb(246, 231, 231); font-weight: bold;">Copo de Água</h3>
+                                 <div class="event-col">
+                                                                     </div>
+                                 <div class="event-col">
+                                     <i class="icon-calendar"></i>
+                                     <span>Sexta-feira, 13 de</span>
+                                     <span>Junho, 2025</span>
+                                 </div>
+                                 <p>A Festa continua na <a href="https://maps.app.goo.gl/E5oFPAb3w1sCDLX56" target="_blank" style="color: rgb(246, 231, 231); font-weight: bold;">Quinta do Vale, Santo Antão do Tojal</a>.</p>
+                                 <p>Relembramos que a quinta tem poucos lugares de estacionamento. O amor não tem limites, mas o estacionamento da quinta sim – por isso, pedimos que se juntem em poucos carros ou venham de Uber (o motorista não precisa de convite)!</p>
+                             </div>
+                         </div>
+                     </div>
                  </div>
              </div>
          </div>
      </div>
  </div>
  
+ 
+ <div id="fh5co-couple">
+     <div class="container">
+         <div class="row">
+             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                 <h3>13 Junho, 2025 Lisboa</h3>
+                 <p>
+                     <div class="b-c b-text-c b-s b-s-t60 b-s-b60 b-cs cf">
+                         <p class="wnd-align-center">
+                             <font class="wnd-font-size-140" style="">
+                                 <em>«Por isso, o homem deixará pai e mãe, para se unir à sua esposa, e os dois serão uma só carne.»</em>
+                                 <font class="wnd-font-size-70">Gen 2, 24</font>
+                             </font>
+                             <br>
+                         </p>
+                     </div>
+                 </p>
+             </div>
+         </div>
+         <div class="couple-wrap animate-box">
+             <div class="couple-half">
+                 <div class="groom">
+                     <img src="images/groom.jpg" alt="groom" class="img-responsive">
+                 </div>
+                 <div class="desc-groom">
+                     <span style="font-size: 2em;"><strong>Francisco Costal</strong></span>
+ 
+                     <p>Há quem o trate por Costal, Chiquinho ou até Kiko. Foi Escuteiro, mostrando o seu espírito solidário. Autoproclamado fã nº 1 do Benfica, sonha com a presidência do clube mas enquanto não acontece é médico psiquiatra. Nos seus tempos livres podem encontrá-lo com a sua noiva, Rita, a fazer sestas ao ar livre ou a comer gelados. Cabo Verde tem um significado especial, pelas suas raízes e pelos bons momentos lá vividos.</p>
+                 </div>
+             </div>
+             <p class="heart text-center"><i class="icon-heart2"></i></p>
+             <div class="couple-half">
+                 <div class="bride">
+                     <img src="images/bride.jpg" alt="groom" class="img-responsive">
+                 </div>
+                 <div class="desc-bride">
+                     <span style="font-size: 2em;"><strong>Rita Menezes</strong></span>
+                     <p>Conhecida por Tita, Rota ou Tita Rota (cortesia do autocorretor ou em homenagem a Manta Rota). É Guia de Portugal e está sempre atenta ao próximo. Multifacetada é “informática ambiental”, mas também brilha na representação (com uma passagem memorável pelo McDonald's) e na música, graças à sua voz de rouxinol. Com o seu noivo Francisco, partilha o gosto por concertos, bons jantares (preferencialmente num indiano) e boas sestas.</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
  
  
  
