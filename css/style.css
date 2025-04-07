@@ -330,29 +330,45 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   z-index: 10;
 }
+
+/* Ajustes gerais para responsividade */
 @media screen and (max-width: 768px) {
+  /* Ajusta a altura da imagem de fundo no header */
   .fh5co-cover {
-    height: 600px;
+    height: auto; /* Permite que a altura se ajuste dinamicamente */
+    background-size: cover; /* Garante que a imagem de fundo cubra toda a área */
+    background-position: center center; /* Centraliza a imagem */
   }
-}
-.fh5co-cover .display-t,
-.fh5co-cover .display-tc {
-  height: 900px;
-  display: table;
-  width: 100%;
-}
-@media screen and (max-width: 768px) {
+
+  /* Ajustes da tabela de alinhamento */
   .fh5co-cover .display-t,
   .fh5co-cover .display-tc {
-    height: 600px;
+    height: auto; /* Permite que a altura da tabela se ajuste */
+    display: table;
+    width: 100%;
+    padding: 20px 0; /* Espaçamento extra para o texto não ficar encostado */
   }
-}
-.fh5co-cover.fh5co-cover-sm {
-  height: 600px;
-}
-@media screen and (max-width: 768px) {
-  .fh5co-cover.fh5co-cover-sm {
-    height: 400px;
+
+  /* Centralização do texto */
+  .fh5co-header h1 {
+    font-size: 28px; /* Tamanho de fonte ajustado */
+    margin: 10px 0;
+    text-align: center; /* Garante que o texto fique centralizado */
+  }
+
+  .fh5co-header h2 {
+    font-size: 18px; /* Ajuste do tamanho da fonte */
+    margin: 10px 0;
+    max-width: 90%; /* Evita que o texto ocupe toda a largura */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Centraliza o subtítulo */
+  }
+
+  /* Ajuste no contador */
+  .simply-countdown {
+    transform: scale(0.7); /* Ajusta o tamanho do contador */
+    margin-top: 20px;
   }
 }
 .fh5co-cover.fh5co-cover-sm .display-t,
@@ -360,12 +376,6 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 600px;
   display: table;
   width: 100%;
-}
-@media screen and (max-width: 768px) {
-  .fh5co-cover.fh5co-cover-sm .display-t,
-  .fh5co-cover.fh5co-cover-sm .display-tc {
-    height: 400px;
-  }
 }
 
 #fh5co-counter,
@@ -402,19 +412,7 @@ h1, h2, h3, h4, h5, h6, figure {
   bottom: 0;
   background: rgba(0, 0, 0, 0.4);
 }
-@media screen and (max-width: 768px) {
-  #fh5co-counter,
-  #fh5co-event {
-    height: inherit;
-    padding: 7em 0;
-  }
-  #fh5co-counter .display-t,
-  #fh5co-counter .display-tc,
-  #fh5co-event .display-t,
-  #fh5co-event .display-tc {
-    height: inherit;
-  }
-}
+
 #fh5co-counter .event-wrap,
 #fh5co-event .event-wrap {
   border: 2px solid rgba(255, 255, 255, 0.5);
@@ -427,12 +425,28 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
+
+/* Ajustes específicos para o #fh5co-counter e #fh5co-event */
 @media screen and (max-width: 768px) {
+  #fh5co-counter,
+  #fh5co-event {
+    height: auto; /* Remove a altura fixa */
+    padding: 7em 0; /* Adiciona padding para espaçar o conteúdo */
+  }
+
+  #fh5co-counter .display-t,
+  #fh5co-counter .display-tc,
+  #fh5co-event .display-t,
+  #fh5co-event .display-tc {
+    height: auto; /* Remove a altura fixa */
+  }
+
   #fh5co-counter .event-wrap,
   #fh5co-event .event-wrap {
     margin-bottom: 10px;
   }
 }
+
 #fh5co-counter .event-wrap h3,
 #fh5co-event .event-wrap h3 {
   font-size: 20px;
@@ -464,11 +478,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-counter {
   height: 600px;
 }
-@media screen and (max-width: 768px) {
-  #fh5co-counter {
-    height: auto;
-  }
-}
+
 
 .timeline {
   list-style: none;
