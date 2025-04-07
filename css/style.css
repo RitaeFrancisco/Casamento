@@ -885,28 +885,6 @@ body {
   color: white;
 }
 
-@media screen and (max-width: 768px) {
-  #fh5co-header .display-tc h1 {
-    font-size: 36px; /* Reduz tamanho no mobile */
-    margin-bottom: 10px;
-  }
-
-  #fh5co-header .display-tc h2 {
-    font-size: 18px; /* Ajusta tamanho no mobile */
-    margin-bottom: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #fh5co-header .display-tc h1 {
-    font-size: 28px; /* Ajusta tamanho para telas menores */
-  }
-
-  #fh5co-header .display-tc h2 {
-    font-size: 16px; /* Ajusta subtítulo para telas menores */
-  }
-}
-
 /* Botões */
 #fh5co-header .display-tc .btn {
   padding: 10px 20px;
@@ -937,7 +915,6 @@ body {
   margin: 0 5px;
   border-radius: 50%;
 }
-
 
 
 #fh5co-counter {
