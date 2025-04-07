@@ -350,14 +350,14 @@ h1, h2, h3, h4, h5, h6, figure {
 
   /* Centralização do texto */
   .fh5co-header h1 {
-    font-size: 27px; /* Tamanho de fonte ajustado */
-    margin: 5px 0;
+    font-size: 23px; /* Tamanho de fonte ajustado */
+    margin: 0px 0;
     text-align: center; /* Garante que o texto fique centralizado */
   }
 
   .fh5co-header h2 {
-    font-size: 16px; /* Ajuste do tamanho da fonte */
-    margin: 5px 0;
+    font-size: 14px; /* Ajuste do tamanho da fonte */
+    margin: 0px 0;
     max-width: 90%; /* Evita que o texto ocupe toda a largura */
     margin-left: auto;
     margin-right: auto;
