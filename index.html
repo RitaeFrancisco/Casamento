@@ -45,93 +45,89 @@
         <![endif]-->
 
         <!-- CSS Personalizado -->
- <style>
-    /* Estilos gerais */
+<style>
+    /* Estilos da capa */
     .fh5co-cover {
         background-size: cover;
         background-position: center;
-        height: 100vh; /* Altura total */
-        position: relative; /* Permite posicionamento absoluto dos elementos */
+        height: 100vh; /* Altura total da capa */
+        position: relative; /* Permite posicionar elementos */
     }
 
-    header h1, header h2 {
-        color: white; /* Contraste com a capa */
-        z-index: 2; /* Garante visibilidade sobre a capa */
-        position: relative;
-    }
-
+    /* Título principal (Rita & Francisco) */
     header h1 {
-        margin-top: 20px; /* Posicionamento ajustado */
-        font-size: 2.5rem;
-    }
-
-    header h2 {
-        margin-top: 10px; /* Menor espaço entre título e subtítulo */
-        font-size: 1.5rem;
-        line-height: 1.6;
-    }
-
-    header .btn {
-        position: absolute; /* Coloca o botão sobre a capa */
-        bottom: 10%; /* Ajusta altura do botão na capa */
+        margin-top: 10px; /* Posição no topo */
+        font-size: 3rem; /* Aumentar tamanho para destaque */
+        color: white; /* Melhor contraste com a fotografia de capa */
+        position: absolute; /* Coloca no topo */
+        top: 5%; /* Posiciona próximo ao topo */
         left: 50%; /* Centraliza horizontalmente */
         transform: translateX(-50%); /* Corrige centralização */
+        z-index: 2; /* Fica acima da capa */
+    }
+
+    /* Subtítulo (Querida família...) */
+    header h2 {
+        margin-top: 30px; /* Subtítulo ajustado */
+        font-size: 1.8rem;
+        line-height: 1.5;
+        color: white;
+        position: absolute; /* Permite posicionamento */
+        top: 20%; /* Eleva o texto na capa */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    /* Countdown */
+    .simply-countdown {
+        font-size: 1.5rem; /* Ajusta tamanho */
+        color: white;
+        position: absolute; /* Alinha sobre a capa */
+        top: 40%; /* Logo abaixo do subtítulo */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+
+    /* Botão "Já está marcado na vossa agenda?" */
+    header .btn {
+        position: absolute; /* Sobre a capa */
+        top: 55%; /* Posiciona abaixo do countdown */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
         padding: 10px 20px;
         background-color: rgb(246, 231, 231);
         color: rgb(190, 94, 96);
+        font-size: 1rem;
         border-radius: 5px;
-        z-index: 2; /* Garante visibilidade */
-    }
-
-    .simply-countdown {
-        position: absolute; /* Coloca o countdown sobre a capa */
-        bottom: 20%; /* Posiciona acima do botão */
-        left: 50%; /* Centraliza horizontalmente */
-        transform: translateX(-50%); /* Corrige centralização */
-        font-size: 1.5rem; /* Tamanho ajustado para o computador */
-        color: white; /* Contraste com a fotografia */
-        z-index: 2; /* Garante visibilidade */
-    }
-
-    /* Elimina espaço entre as seções */
-    #fh5co-header {
-        margin-bottom: 0; /* Remove espaçamento extra */
-    }
-
-    #fh5co-couple-story {
-        margin-top: 0; /* Inicia imediatamente após a capa */
+        z-index: 2; /* Mantém acima da capa */
     }
 
     /* Responsividade para telemóveis */
     @media (max-width: 768px) {
         .fh5co-cover {
-            height: auto; /* Ajusta altura da capa no telemóvel */
+            height: auto; /* Ajusta capa para telemóveis */
         }
 
         header h1 {
-            font-size: 2rem; /* Tamanho reduzido para telemóveis */
+            font-size: 2rem; /* Reduz tamanho no telemóvel */
+            top: 5%; /* Posição no topo */
         }
 
         header h2 {
-            font-size: 1.2rem; /* Tamanho reduzido no telemóvel */
-            margin-top: 10px;
+            font-size: 1.2rem; /* Reduz tamanho no telemóvel */
+            top: 15%; /* Ajusta posição do subtítulo */
         }
 
         .simply-countdown {
-            font-size: 1rem; /* Countdown menor no telemóvel */
-            bottom: auto; /* Remove posicionamento absoluto */
-            margin-top: 20px; /* Adiciona espaço interno */
+            font-size: 1rem; /* Countdown menor */
+            top: 35%; /* Ajusta posição */
         }
 
         header .btn {
-            font-size: 0.9rem; /* Botão proporcional ao tamanho do telemóvel */
-            position: static; /* Remove posicionamento absoluto */
-            margin: 15px auto; /* Centraliza no telemóvel */
-            padding: 8px 16px; /* Botão menor e mais ajustado */
-        }
-
-        #fh5co-couple-story {
-            margin-top: 0; /* Mantém espaço ajustado no telemóvel */
+            font-size: 0.9rem; /* Botão menor */
+            top: 50%; /* Ajusta botão no telemóvel */
         }
     }
 </style>
