@@ -36,8 +36,8 @@
       #fh5co-header {
         background-size: cover;
         background-position: center;
-        height: 450px; /* Altura ajustada */
-        padding: 20px; /* Garantir espaçamento interno */
+        height: auto; /* Ajusta a altura dinamicamente */
+        padding: 20px;
       }
       #fh5co-header h1 {
         font-size: 28px;
@@ -49,22 +49,23 @@
       }
     }
 
-    /* Corrigindo o Botão no Mobile */
+    /* Ajuste do Countdown no Mobile */
     @media screen and (max-width: 768px) {
-      #fh5co-header .btn {
-        display: inline-block;
-        margin-top: 10px; /* Espaçamento suficiente */
-        position: relative; /* Mantém dentro do container */
-   
+      .simply-countdown {
+        display: flex; /* Permite alinhar lado a lado */
+        justify-content: center;
+        transform: scale(0.7); /* Reduz o tamanho */
+        margin-top: 10px;
       }
     }
 
-    /* Ajuste Final do Countdown */
+    /* Botão de "Marcar na Agenda" */
     @media screen and (max-width: 768px) {
-      .simply-countdown {
+      #fh5co-header .btn {
         display: inline-block;
-        transform: scale(0.5);
-        margin-top: 5px;
+        margin-top: 10px; /* Espaço entre countdown e botão */
+        position: relative;
+        z-index: 2;
       }
     }
   </style>
@@ -101,23 +102,22 @@
             <div class="display-t">
               <div class="display-tc animate-box" data-animate-effect="fadeIn">
                 <h1>Rita &amp; Francisco</h1>
-                <br>
                 <h2>Querida família e queridos amigos, vamos casar! Enfim, este namoro que começou por falar crioulo, em Santo Antão, vai tornar-se casamento de Santo António!</h2>
                 <div class="simply-countdown simply-countdown-one"></div>
-                <p>
-                  <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco..."
-                     class="btn btn-default btn-sm" 
-                     target="_blank" 
-                     style="background-color: rgb(246, 231, 231); color: rgb(190, 94, 96);">
-                     Já está marcado na vossa Agenda?
-                  </a>
-                </p>
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Casamento+Rita+e+Francisco..."
+                   class="btn btn-default btn-sm" 
+                   target="_blank" 
+                   style="background-color: rgb(246, 231, 231); color: rgb(190, 94, 96);">
+                   Já está marcado na vossa Agenda?
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </header>
+  
+
  
  
  <div id="fh5co-couple-story">
