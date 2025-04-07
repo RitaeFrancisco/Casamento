@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <link rel="stylesheet" href="css/style.css">
 
-   <!-- Estilos Internos Personalizados -->
+  <!-- Estilos Internos Personalizados -->
   <style>
     body {
       margin: 0;
@@ -28,9 +28,8 @@
     #fh5co-header {
       margin: 0;
       position: relative;
-      width: 100vw;
+      width: 100%;
       padding: 0;
-      box-sizing: border-box;
       text-align: center;
       background-size: cover;
       background-position: center center;
@@ -69,16 +68,20 @@
     /* Ajustes para Mobile */
     @media screen and (max-width: 768px) {
       #fh5co-header {
-        padding: 10px;
-        width: 100vw;
-        background-size: cover;
-        background-position: 30% center; /* Imagem mais à esquerda */
-        height: auto;
+        padding: 20px 0;
+        background-position: 30% center;
+      }
+
+      #fh5co-header .container {
+        padding: 0 5%;
       }
 
       #fh5co-header h1 {
         font-size: 24px;
         margin: 10px 0;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       #fh5co-header h2 {
@@ -89,12 +92,28 @@
         margin-right: auto;
       }
 
-      #fh5co-header .container {
-        padding: 0 5%; /* Margens mais pequenas */
-      }
-
       .simply-countdown {
         transform: scale(0.6);
+      }
+
+      #fh5co-event {
+        height: auto !important;
+        padding: 40px 0;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .event-wrap {
+        margin-bottom: 30px;
+      }
+
+      .couple-wrap {
+        flex-direction: column;
+      }
+
+      .couple-half {
+        width: 100%;
+        margin-bottom: 20px;
       }
     }
   </style>
