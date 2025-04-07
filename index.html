@@ -19,6 +19,33 @@
 
   <!-- Estilos Internos para Centralização e Ajustes -->
   <style>
+
+     /* Garantir que o Header esteja centralizado corretamente */
+  #fh5co-header {
+    margin: 0 auto; /* Centraliza o header horizontalmente */
+    position: relative; /* Garante o posicionamento correto */
+    width: 100%; /* Garante que use 100% da largura disponível */
+    padding: 0; /* Remove qualquer padding desnecessário */
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo de largura */
+  }
+
+  /* Ajustes para o container do Header */
+  #fh5co-header .container {
+    margin: 0 auto; /* Centraliza o container dentro do header */
+    padding: 0 15px; /* Espaçamento interno para evitar colagem nas bordas */
+    max-width: 100%; /* Garante que o container não extrapole a largura */
+  }
+
+  /* Configurações para Mobile */
+  @media screen and (max-width: 768px) {
+    #fh5co-header {
+      text-align: center; /* Garante alinhamento central no mobile */
+      padding: 15px;
+    }
+    #fh5co-header .container {
+      padding: 0 10px; /* Espaço extra para evitar bordas apertadas no mobile */
+    }
+  }
     /* Centralização do Header */
     #fh5co-header .display-t {
       display: table;
