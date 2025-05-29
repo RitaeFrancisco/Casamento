@@ -64,32 +64,91 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
 
     <style>
-        .container-mesas {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px;
-        }
-        .mesa {
-            width: 80px;
-            height: 80px;
-            background-color: #ff9800;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #fff;
-            cursor: pointer;
-        }
-        .descricao {
-            display: none;
-            margin-top: 20px;
-            text-align: center;
-            font-size: 18px;
-        }
-    </style>
+    .container-mesas {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 20px;
+    }
+    .mesa {
+        width: 80px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .magerico-top {
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(circle at 30% 30%, #4caf50, #2e7d32); /* gradiente verde */
+        border-radius: 50%;
+        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2); /* efeito de relevo */
+        z-index: 2;
+    }
+
+    .magerico-pot {
+        width: 40px;
+        height: 30px;
+        background-color: #d84315; /* terracota */
+        border-radius: 0 0 8px 8px;
+        margin-top: -10px;
+        z-index: 1;
+    }
+
+
+      .cravo-container {
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-15deg); /* Inclinação */
+        display: flex;
+        align-items: center;
+    }
+
+    .cravo-haste {
+        width: 4px;
+        height: 40px; /* Haste aumentada */
+        background-color: brown; /* Cor da haste */
+        border-radius: 2px;
+        position: relative;
+    }
+
+    .cravo-bandeira {
+        width: 35px; /* Bandeira maior */
+        height: 20px; /* Menor que antes */
+        background-color: var(--cravo-color, #ff1744); /* Cor variável */
+        position: absolute;
+        top: 3px; /* Começa no topo da haste */
+        left: 4px; /* Ajustado para colar na haste */
+    }
+
+    .mesa-numero {
+        display: none; /* Número oculto */
+    }
+    .descricao {
+        display: none;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+ .mesa.selecionada .magerico-top {
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.9);
+        transform: scale(1.25); /* Pequeno aumento no topo */
+    }
+
+    .mesa.selecionada .magerico-pot {
+        background-color: #ff5722; /* Laranja vibrante */transform: scale(1.25);
+        box-shadow: 0 0 10px rgba(255, 87, 34, 0.8);
+    }
+
+</style>
+
 </head>
 <body id="lista">
 
@@ -138,67 +197,126 @@
 
 <script>
     const descricoesMesas = {
-        1: { titulo: "Mesa 1 - Volkswagen, Benjamim", descricao: "Esta música é muito simples: conta a história de uma pessoa que conduz e de outra que é conduzida, fala-nos de alguém que obedece e de outro que é obedecido. Bem, não sabemos se neste casamento haverá sempre alguém a obedecer (nota do editor: é o Francisco), mas desde que começaram a namorar que o Skoda Fabia do noivo tem levado a Rita a todo o lado. Quando ouvem esta melodia sobre “queimar gasóleo [...], pões as mudanças, eu acelero” eles lembram-se um do outro; e dizem que, num dia mais quente a fazer lembrar o sol das férias de Verão, a Rita até deita uma lágrima.", link: "https://open.spotify.com/search/volkswagen%20benjami", imagem: "images/mesa1.jpg" },
-        2: { titulo: "Mesa 2 - Senhora das Indecisões, Capitães da Areia", descricao: "Quando começaram a namorar, a Rita tinha muita dificuldade em tomar decisões. É verdade, ninguém diria!, mas certamente que o charme do Francisco a deixava sem jeito. Foi nessa altura que o noivo lhe mostrou uma música que haveriam de ouvir até cansar naqueles primeiros meses. Ela reza assim: “Amada inconstante Senhora das Indecisões”. A Rita achou graça; o Francisco achou que era uma declaração de amor. Até ver, tem funcionado.", link: "https://open.spotify.com/track/4msj0FD0zoWAtyz2sUGZaW", imagem: "images/mesa2.jpg" },
-        3: { titulo: "Mesa 3 - Archie, Marry Me, Alvvays", descricao: "Uma das primeiras viagens que os noivos fizeram foi uma odisseia de ida e volta ao Primavera Sound no Porto. Nesse dia de muita chuva em que apanharam uma molha até aos ossos, o Francisco e a Rita cantaram este hino de peito cheio, quiçá um presságio do dia de hoje. Convenhamos, no entanto, que esta música, uma aparente canção de amor, é também uma descasca de uma jovem ao seu namorado que não gosta de casamento. Felizmente, aqui, por entre dias de sol e chuva, nunca foi o caso.", link: "https://open.spotify.com/track/5GAB1X0AJq2EZjxXP9zMFt", imagem: "images/mesa3.jpg" },
-        4: { titulo: "Mesa 4 - A Rendição, Benjamim", descricao: "De todas as músicas do Benjamim que encheram a vida deste casal, esta é sem dúvida a mais recente. Assim que a ouviu, o Francisco soube que teria de usá-la para pedir a Rita em casamento. A carta que iniciou o pedido tomou, assim, o nome da canção. Nela, diz-se que “eu já tentei render-me à evidência de seres tu a razão para tudo ser diferente; e nos teus termos sai cara a rendição”. Eis, por isso, perante vós, uma noiva que tem sempre razão, um noivo com dificuldade em atribuí-la… e uma vida inteira para oferecerem um ao outro a rendição que hoje prometeram.", link: "https://open.spotify.com/track/3PSHC7HUxj6wa8mkxbj05i", imagem: "images/mesa4.jpg" },
-        5: { titulo: "Mesa 5 - Canção para Casar Contigo, Manuel Fúria", descricao: "Foi há exactos 369 sóis que a Rita e o Francisco começaram o caminho do noivado que os havia de trazer a esta mesa. No final de uns dias bem passados por entre as maravilhas da Ria Formosa, o Francisco encheu-se de coragem, pôs-se num joelho e pronunciou as palavras mágicas: “Maria Rita, queres casar comigo?”... Bem, não sem antes ter obrigado a Rita a resolver mais um dos seus famosos enigmas! A resposta para essa última adivinha remetia para uma canção velha conhecida do noivo, de um artista muito de sua casa. Este foi o mote para o início de uma vida a dois - ou mais porque, como canta o Fúria, “não me deixes assim sozinho a sonhar: uma família, um lar e as crianças a cantar!”.", link: "https://open.spotify.com/track/5E0dyazMvmuvQSXubzXF96", imagem: "images/mesa5.jpg" },
-        6: { titulo: "Mesa 6 - Czemente de Riba Ribera, Cordas do Sol", descricao: "Num certo sentido, podemos dizer que esta é a música que dá nome a este dia d’czemente. A Rita e o Francisco já se conheciam fazia 2 anos, mas foi só em 2021, em plena ilha de Santo Antão, que deram por si a olhar um para o outro com olhos diferentes. Uma das músicas que trouxeram para sempre desse lugar encantado foi este hino de casamento. O nome diz tudo: hoje é dia de festa, dia de dançar, dia de brindar aos noivos e às coisas boas da vida - é dia d’czemente!", link: "https://open.spotify.com/track/3kbT556HvyTCpSQ6SqBPjr", imagem: "images/mesa6.jpg" },
-        7: { titulo: "Mesa 7 - Despechá, Rosalía", descricao: "Palavras não seriam suficientes para descrever o que a Rita pensou ao ver, pela primeira vez, o Francisco, betinho pé-de-chumbo, a dançar de coração os passos desta música espanhola! A surpresa foi tanta que passado uns tempos foram assistir ao concerto da Rosalía no Primavera Sound, no Porto! Até hoje Rosalía faz as delícias dos noivos: o Francisco diz que ouve por interesse intelectual; a Rita, está claro, só se ri!", link: "https://open.spotify.com/track/5ildQOEKmJuWGl2vRkFdYc", imagem: "images/mesa7.png" },
-        8: { titulo: "Mesa 8 - Love Natural, Crystal Fighters", descricao: "Assim que tiveram de escolher a música de entrada no jantar, os noivos sabiam ter de ser esta. Não há nenhuma razão particular para este facto: não costumam ouvi-la, não ouvem a banda, nunca foram a um concerto; e, no entanto, há uma electricidade, uma energia, uma emoção que sempre os lembrou da sua paixão. Não se pode dizer que tenha sido sempre um amor natural: quando se conheceram, os dois não se podiam ver à frente; mas, como se viu pela escolha desta canção, hoje por hoje andam muito sintonizados.", link: "https://open.spotify.com/track/340nB6iDnGpaofYoSg8BnL", imagem: "images/mesa8.jpg" },
-        9: { titulo: "Mesa 9 - Gelado de Verão, Humanos", descricao: "Quem não gosta de um bom gelado? Mas quem gosta de um gelado bem frio em todas as estações do ano? E quem comeria gelado todos os dias, até nos mais escandalosamente frios, para poder até trincá-lo? Só uma pessoa o faria: a Rita Menezes! Não é grande espanto, por isso, que uma música sobre gelados que acompanhou várias viagens dos noivos à Manta Rota figure hoje no seu mural da glória. E, afinal, não é todos os dias que o amor se declara assim: “Foste o mar da minha praia, tu foste o meu bronzeador”.", link: "https://open.spotify.com/track/5cIeLmGXBLPwgMWWxN1K6h", imagem: "images/mesa9.jpg" },
-        10: { titulo: "Mesa 10 - O Namorico da Rita, Amália Rodrigues", descricao: "“No mercado da ribeira, há um romance de amor entre a Rita que é peixeira e o Chico que é pescador”. Assim começa este fado que quase se podia crer ser escrito para os noivos - não fosse o pequeno pormenor de estarmos perante uma engenheira e um psiquiatra. Num certo jantar a dois, a Rita pediu ao fadista de serviço que tocasse esta música para os noivos; e, embora não haja peixe à mistura, sempre continua a ser verdade que “quando ele passa por ela, ela sorri descarada”!", link: "https://open.spotify.com/track/1GIynu7vSAsInQ54kBVMWj", imagem: "images/mesa10.jpg" },
-        11: { titulo: "Mesa 11 - La Vie en Rose, Édith Piaf", descricao: "Num oceano de música de língua portuguesa, inglesa, espanhola, até crioula!, surge um intruso notável: esta conhecida melodia de Édith Piaf. Desde que se apaixonaram um pelo outro, depois de começarem a namorar, até chegarem a este dia, todos os dias têm sido assim: um sonho a dois, a vida mais colorida mesmo nos dias mais rotineiros! Esperamos que estes dois noivos continuem para sempre assim, enamorados, nos braços um do outro.", link: "https://open.spotify.com/track/3lAun9V0YdTlCSIEXPvfsY", imagem: "images/mesa11.jpg" },
-        12: { titulo: "Mesa 12 - Ain't no Mountain High Enough, Marvin Gaye e Tammi Terrell", descricao: "Talvez nunca tenha havido uma música tão inadvertidamente adequada para um casamento! Muitas vezes no rádio do velho Skoda, a Rita e o Francisco imitaram o lendário duo da música Motown. Assim, a cantar, já afirmavam aquilo que hoje firmaram perante Deus: que, até ao dia do seu último suspiro, hão de estar juntos na alegria e na saúde, não os há de separar nem a doença, nem a tristeza, que não há entre eles “mountain high enough” nem “river wide enough”.", link: "https://open.spotify.com/track/7tqhbajSfrz2F7E1Z75ASX", imagem: "images/mesa12.jpg" },
-        13: { titulo: "Mesa 13 - Another Day of Sun, La La Land", descricao: "Nem sempre o gosto cinematográfico deste noivos coincide… Terão sempre o La La Land para juntar as suas vontades! O Francisco diz que a Rita só gosta deste filme por causa das músicas; a Rita discorda, e afirma que o seu agora esposo escolheu este filme para poder fingir que gosta de musicais. Bem, seja como seja, a verdade é que já muito se divertiram a ver esta obra de arte e a trautear as suas canções… E a Rita, talvez para com os seus botões, pensa que um dia o Francisco também fará parar o trânsito para sapatear assim!", link: "https://open.spotify.com/track/5kRBzRZmZTXVg8okC7SJFZ", imagem: "images/mesa13.jpg" },
-        14: { titulo: "Mesa 14 - Os Lírios do Campo, Manuel Fúria", descricao: "Basta ter estado atento à missa para perceber a importância desta música na vida deste casal… O que veio primeiro: o gosto particular por esse Evangelho ou o encanto por esta canção? Talvez não haja uma resposta correcta; certo é que Manuel Fúria conseguiu pôr por música o que o Francisco e a Rita foram descobrindo ao longo dos últimos anos: que o Senhor nos acompanha, que Deus nos ama e cuida de nós, que providencia, pois, como já é sabido há cerca de 2000 anos: “os lírios do campo - ninguém os despirá”!", link: "https://open.spotify.com/track/2y40bL2TSUJoqcKgV8AQKF", imagem: "images/mesa5.jpg" },
-        15: { titulo: "Mesa 15 - Católico Manco Menino, Manuel Fúria", descricao: "A música mais recente do Manuel Fúria que compõe a lista das mesas remete para um tempo antigo, onde a cidade se cruzava com a serra e quando as viagens de carro ainda se faziam pela Estrada Nacional. O Francisco apoderou-se desta música como sua e a Rita, que gosta de o ouvir cantar, diz que ele acha que é o verdadeiro “católico, manco, menino de seu pai”. Nunca se comprovou a teoria, mas foi o suficiente para terem partilhado bons momentos nos concertos deste grande artista.", link: "https://open.spotify.com/track/1SNUTZf5FcACgZjywW557k", imagem: "images/mesa15.jpg" },
-        16: { titulo: "Mesa 16 - Friday I'm in Love, The Cure", descricao: "Muitas poderiam ser as razões para esta escolha: porque todos gostamos da chegada do fim-de-semana, porque os noivos quando estão juntos tendem a ver com alegria e cor todos os dias da semana, porque quem ama mal pode esperar pela chegada do final do dia para poder partilhar o tempo com o seu amado… Mas, no final de contas, hoje é Sexta-feira e é dia de celebrar o amor da Rita e do Francisco!", link: "https://www.youtube.com/watch?v=EXEMPLO16", imagem: "images/mesa16.jpg" },
-        17: { titulo: "Mesa 17 - Real Love Baby, Father John Misty", descricao: "O que veio primeiro: o ovo ou a galinha?, a flor ou a abelha?, o namoro ou esta música? Não sabendo localizar temporalmente quando esta música começou a fazer as delícias dos seus ouvidos, a verdade é que a podemos considerar como a música do início do seu namoro. A Rita e o Francisco sempre gostaram de a ouvir: porque se pode cantar em dueto, porque a letra é muito simples como só a língua inglesa podia ser, porque foi amor real desde o primeiro dia.", link: "https://open.spotify.com/track/0Z57YWES04xGh3AImDz6Qr", imagem: "images/mesa17.jpg" },
-        18: { titulo: "Mesa 18 - Voulez-Vous, ABBA", descricao: "Será que este vai ser mais um casamento com uma referência a música disco sueca dos anos 70? Para a Rita, fã dos ABBA, isso sempre foi evidente. Já o Francisco… bem, ele ainda hoje se debate com algum desconforto cada vez que tem de rever o Mamma Mia! (e já o fez mais vezes do que aquelas que pode admitir!). Mas mesmo ele confessa — entre uma lágrima e um suspiro — que há algo nestas músicas que não se pode contornar. Esta é mais uma que resume o cerne deste dia: “Voulez vous?” - sim, eles querem-se um ao outro, desde hoje até sempre!", link: "https://open.spotify.com/track/17OqI90oTFZ3J8PVu6j07V", imagem: "images/mesa18.jpg" },
-        19: { titulo: "Mesa 19 - Rosie, Benjamim", descricao: "De todos os sucessos do Benjamim, este talvez seja o mais inusitado para se colocar neste mural: letra meio trapalhona, música pouco conhecida… e, no entanto, uma daquelas que a Rita e o Francisco não dispensam de cantar, ou até gritar!, nos inúmeros concertos a que já foram deste artista. E, afinal, na música como no casamento, não é isso que interessa: uma melodia eficaz que em harmonia põe os dois a dançar em conjunto?", link: "https://open.spotify.com/track/4FlK6zdvr5sV1WC69zrHXu", imagem: "images/mesa1.jpg" },
-        20: { titulo: "Mesa 20 - Dor no Ombro, Pedro de Tróia", descricao: "Nos primeiros tempos do seu namoro, a Rita e o Francisco, à boleia deste último, ouviram as músicas de Pedro de Tróia até à exaustão. Foi seu, inclusive, o primeiro concerto que os noivos assistiram enquanto namorados. À altura, a Rita ficou apaixonada por esta música e enchia, com a sua voz de rouxinol, o carro do Francisco. Talvez por gostar de adormecer no ombro do seu então namorado; talvez já previsse o futuro porque, como é cantado, “Quero viver tudo até ao fim neste amor de quem é tão doido por ti”.", link: "https://open.spotify.com/track/7wSBWEhS6TQ5tuGd4BT7kt", imagem: "images/mesa20.jpg" },
-        21: { titulo: "Mesa 21 - Seja Agora, Deolinda", descricao: "Um clássico da música tradicional moderna deste nosso país, não há viagem que os noivos façam que não termine com ambos a cantar esta música dos Deolinda! Não é apenas um clássico dos nossos tempos, música bem animada, mas, de certo modo, também conta a história da sua relação: depois de se conhecerem sem guardarem boas memórias um do outro, em 2019, acabaram por se “ver os dois, ver no que isto dá, ficar um pouco mais a conversar, ter a eternidade para nós, quem sabe, jantar”. E assim hão de ficar juntos para sempre, num “destino qualquer ou um banquinho bom para sentar”.", link: "https://open.spotify.com/track/5ttlmsVFycrU0rfzNlenAV?si=UikkdgpwSBGVJOTyiw_XSg", imagem: "images/mesa21.jpg" }
+        1: { titulo: "Volkswagen, Benjamim", descricao: "Esta música é muito simples: conta a história de uma pessoa que conduz e de outra que é conduzida, fala-nos de alguém que obedece e de outro que é obedecido. Bem, não sabemos se neste casamento haverá sempre alguém a obedecer (nota do editor: é o Francisco), mas desde que começaram a namorar que o Skoda Fabia do noivo tem levado a Rita a todo o lado. Quando ouvem esta melodia sobre “queimar gasóleo [...], pões as mudanças, eu acelero” eles lembram-se um do outro; e dizem que, num dia mais quente a fazer lembrar o sol das férias de Verão, a Rita até deita uma lágrima.", link: "https://open.spotify.com/search/volkswagen%20benjami", imagem: "images/mesa1.jpg" },
+        2: { titulo: "Senhora das Indecisões, Capitães da Areia", descricao: "Quando começaram a namorar, a Rita tinha muita dificuldade em tomar decisões. É verdade, ninguém diria!, mas certamente que o charme do Francisco a deixava sem jeito. Foi nessa altura que o noivo lhe mostrou uma música que haveriam de ouvir até cansar naqueles primeiros meses. Ela reza assim: “Amada inconstante Senhora das Indecisões”. A Rita achou graça; o Francisco achou que era uma declaração de amor. Até ver, tem funcionado.", link: "https://open.spotify.com/track/4msj0FD0zoWAtyz2sUGZaW", imagem: "images/mesa2.jpg" },
+        3: { titulo: "Archie, Marry Me, Alvvays", descricao: "Uma das primeiras viagens que os noivos fizeram foi uma odisseia de ida e volta ao Primavera Sound no Porto. Nesse dia de muita chuva em que apanharam uma molha até aos ossos, o Francisco e a Rita cantaram este hino de peito cheio, quiçá um presságio do dia de hoje. Convenhamos, no entanto, que esta música, uma aparente canção de amor, é também uma descasca de uma jovem ao seu namorado que não gosta de casamento. Felizmente, aqui, por entre dias de sol e chuva, nunca foi o caso.", link: "https://open.spotify.com/track/5GAB1X0AJq2EZjxXP9zMFt", imagem: "images/mesa3.jpg" },
+        4: { titulo: "A Rendição, Benjamim", descricao: "De todas as músicas do Benjamim que encheram a vida deste casal, esta é sem dúvida a mais recente. Assim que a ouviu, o Francisco soube que teria de usá-la para pedir a Rita em casamento. A carta que iniciou o pedido tomou, assim, o nome da canção. Nela, diz-se que “eu já tentei render-me à evidência de seres tu a razão para tudo ser diferente; e nos teus termos sai cara a rendição”. Eis, por isso, perante vós, uma noiva que tem sempre razão, um noivo com dificuldade em atribuí-la… e uma vida inteira para oferecerem um ao outro a rendição que hoje prometeram.", link: "https://open.spotify.com/track/3PSHC7HUxj6wa8mkxbj05i", imagem: "images/mesa4.jpg" },
+        5: { titulo: "Canção para Casar Contigo, Manuel Fúria", descricao: "Foi há exactos 369 sóis que a Rita e o Francisco começaram o caminho do noivado que os havia de trazer a esta mesa. No final de uns dias bem passados por entre as maravilhas da Ria Formosa, o Francisco encheu-se de coragem, pôs-se num joelho e pronunciou as palavras mágicas: “Maria Rita, queres casar comigo?”... Bem, não sem antes ter obrigado a Rita a resolver mais um dos seus famosos enigmas! A resposta para essa última adivinha remetia para uma canção velha conhecida do noivo, de um artista muito de sua casa. Este foi o mote para o início de uma vida a dois - ou mais porque, como canta o Fúria, “não me deixes assim sozinho a sonhar: uma família, um lar e as crianças a cantar!”.", link: "https://open.spotify.com/track/5E0dyazMvmuvQSXubzXF96", imagem: "images/mesa5.jpg" },
+        6: { titulo: "Czemente de Riba Ribera, Cordas do Sol", descricao: "Num certo sentido, podemos dizer que esta é a música que dá nome a este dia d’czemente. A Rita e o Francisco já se conheciam fazia 2 anos, mas foi só em 2021, em plena ilha de Santo Antão, que deram por si a olhar um para o outro com olhos diferentes. Uma das músicas que trouxeram para sempre desse lugar encantado foi este hino de casamento. O nome diz tudo: hoje é dia de festa, dia de dançar, dia de brindar aos noivos e às coisas boas da vida - é dia d’czemente!", link: "https://open.spotify.com/track/3kbT556HvyTCpSQ6SqBPjr", imagem: "images/mesa6.jpg" },
+        7: { titulo: "Despechá, Rosalía", descricao: "Palavras não seriam suficientes para descrever o que a Rita pensou ao ver, pela primeira vez, o Francisco, betinho pé-de-chumbo, a dançar de coração os passos desta música espanhola! A surpresa foi tanta que passado uns tempos foram assistir ao concerto da Rosalía no Primavera Sound, no Porto! Até hoje Rosalía faz as delícias dos noivos: o Francisco diz que ouve por interesse intelectual; a Rita, está claro, só se ri!", link: "https://open.spotify.com/track/5ildQOEKmJuWGl2vRkFdYc", imagem: "images/mesa7.png" },
+        8: { titulo: "Love Natural, Crystal Fighters", descricao: "Assim que tiveram de escolher a música de entrada no jantar, os noivos sabiam ter de ser esta. Não há nenhuma razão particular para este facto: não costumam ouvi-la, não ouvem a banda, nunca foram a um concerto; e, no entanto, há uma electricidade, uma energia, uma emoção que sempre os lembrou da sua paixão. Não se pode dizer que tenha sido sempre um amor natural: quando se conheceram, os dois não se podiam ver à frente; mas, como se viu pela escolha desta canção, hoje por hoje andam muito sintonizados.", link: "https://open.spotify.com/track/340nB6iDnGpaofYoSg8BnL", imagem: "images/mesa8.jpg" },
+        9: { titulo: "Gelado de Verão, Humanos", descricao: "Quem não gosta de um bom gelado? Mas quem gosta de um gelado bem frio em todas as estações do ano? E quem comeria gelado todos os dias, até nos mais escandalosamente frios, para poder até trincá-lo? Só uma pessoa o faria: a Rita Menezes! Não é grande espanto, por isso, que uma música sobre gelados que acompanhou várias viagens dos noivos à Manta Rota figure hoje no seu mural da glória. E, afinal, não é todos os dias que o amor se declara assim: “Foste o mar da minha praia, tu foste o meu bronzeador”.", link: "https://open.spotify.com/track/5cIeLmGXBLPwgMWWxN1K6h", imagem: "images/mesa9.jpg" },
+        10: { titulo: "O Namorico da Rita, Amália Rodrigues", descricao: "“No mercado da ribeira, há um romance de amor entre a Rita que é peixeira e o Chico que é pescador”. Assim começa este fado que quase se podia crer ser escrito para os noivos - não fosse o pequeno pormenor de estarmos perante uma engenheira e um psiquiatra. Num certo jantar a dois, a Rita pediu ao fadista de serviço que tocasse esta música para os noivos; e, embora não haja peixe à mistura, sempre continua a ser verdade que “quando ele passa por ela, ela sorri descarada”!", link: "https://open.spotify.com/track/1GIynu7vSAsInQ54kBVMWj", imagem: "images/mesa10.jpg" },
+        11: { titulo: "La Vie en Rose, Édith Piaf", descricao: "Num oceano de música de língua portuguesa, inglesa, espanhola, até crioula!, surge um intruso notável: esta conhecida melodia de Édith Piaf. Desde que se apaixonaram um pelo outro, depois de começarem a namorar, até chegarem a este dia, todos os dias têm sido assim: um sonho a dois, a vida mais colorida mesmo nos dias mais rotineiros! Esperamos que estes dois noivos continuem para sempre assim, enamorados, nos braços um do outro.", link: "https://open.spotify.com/track/3lAun9V0YdTlCSIEXPvfsY", imagem: "images/mesa11.jpg" },
+        12: { titulo: "Ain't no Mountain High Enough, Marvin Gaye e Tammi Terrell", descricao: "Talvez nunca tenha havido uma música tão inadvertidamente adequada para um casamento! Muitas vezes no rádio do velho Skoda, a Rita e o Francisco imitaram o lendário duo da música Motown. Assim, a cantar, já afirmavam aquilo que hoje firmaram perante Deus: que, até ao dia do seu último suspiro, hão de estar juntos na alegria e na saúde, não os há de separar nem a doença, nem a tristeza, que não há entre eles “mountain high enough” nem “river wide enough”.", link: "https://open.spotify.com/track/7tqhbajSfrz2F7E1Z75ASX", imagem: "images/mesa12.jpg" },
+        13: { titulo: "Another Day of Sun, La La Land", descricao: "Nem sempre o gosto cinematográfico deste noivos coincide… Terão sempre o La La Land para juntar as suas vontades! O Francisco diz que a Rita só gosta deste filme por causa das músicas; a Rita discorda, e afirma que o seu agora esposo escolheu este filme para poder fingir que gosta de musicais. Bem, seja como seja, a verdade é que já muito se divertiram a ver esta obra de arte e a trautear as suas canções… E a Rita, talvez para com os seus botões, pensa que um dia o Francisco também fará parar o trânsito para sapatear assim!", link: "https://open.spotify.com/track/5kRBzRZmZTXVg8okC7SJFZ", imagem: "images/mesa13.jpg" },
+        14: { titulo: "Os Lírios do Campo, Manuel Fúria", descricao: "Basta ter estado atento à missa para perceber a importância desta música na vida deste casal… O que veio primeiro: o gosto particular por esse Evangelho ou o encanto por esta canção? Talvez não haja uma resposta correcta; certo é que Manuel Fúria conseguiu pôr por música o que o Francisco e a Rita foram descobrindo ao longo dos últimos anos: que o Senhor nos acompanha, que Deus nos ama e cuida de nós, que providencia, pois, como já é sabido há cerca de 2000 anos: “os lírios do campo - ninguém os despirá”!", link: "https://open.spotify.com/track/2y40bL2TSUJoqcKgV8AQKF", imagem: "images/mesa5.jpg" },
+        15: { titulo: "Católico Manco Menino, Manuel Fúria", descricao: "A música mais recente do Manuel Fúria que compõe a lista das mesas remete para um tempo antigo, onde a cidade se cruzava com a serra e quando as viagens de carro ainda se faziam pela Estrada Nacional. O Francisco apoderou-se desta música como sua e a Rita, que gosta de o ouvir cantar, diz que ele acha que é o verdadeiro “católico, manco, menino de seu pai”. Nunca se comprovou a teoria, mas foi o suficiente para terem partilhado bons momentos nos concertos deste grande artista.", link: "https://open.spotify.com/track/1SNUTZf5FcACgZjywW557k", imagem: "images/mesa15.jpg" },
+        16: { titulo: "Friday I'm in Love, The Cure", descricao: "Muitas poderiam ser as razões para esta escolha: porque todos gostamos da chegada do fim-de-semana, porque os noivos quando estão juntos tendem a ver com alegria e cor todos os dias da semana, porque quem ama mal pode esperar pela chegada do final do dia para poder partilhar o tempo com o seu amado… Mas, no final de contas, hoje é Sexta-feira e é dia de celebrar o amor da Rita e do Francisco!", link: "https://www.youtube.com/watch?v=EXEMPLO16", imagem: "images/mesa16.jpg" },
+        17: { titulo: "Real Love Baby, Father John Misty", descricao: "O que veio primeiro: o ovo ou a galinha?, a flor ou a abelha?, o namoro ou esta música? Não sabendo localizar temporalmente quando esta música começou a fazer as delícias dos seus ouvidos, a verdade é que a podemos considerar como a música do início do seu namoro. A Rita e o Francisco sempre gostaram de a ouvir: porque se pode cantar em dueto, porque a letra é muito simples como só a língua inglesa podia ser, porque foi amor real desde o primeiro dia.", link: "https://open.spotify.com/track/0Z57YWES04xGh3AImDz6Qr", imagem: "images/mesa17.jpg" },
+        18: { titulo: "Voulez-Vous, ABBA", descricao: "Será que este vai ser mais um casamento com uma referência a música disco sueca dos anos 70? Para a Rita, fã dos ABBA, isso sempre foi evidente. Já o Francisco… bem, ele ainda hoje se debate com algum desconforto cada vez que tem de rever o Mamma Mia! (e já o fez mais vezes do que aquelas que pode admitir!). Mas mesmo ele confessa — entre uma lágrima e um suspiro — que há algo nestas músicas que não se pode contornar. Esta é mais uma que resume o cerne deste dia: “Voulez vous?” - sim, eles querem-se um ao outro, desde hoje até sempre!", link: "https://open.spotify.com/track/17OqI90oTFZ3J8PVu6j07V", imagem: "images/mesa18.jpg" },
+        19: { titulo: "Rosie, Benjamim", descricao: "De todos os sucessos do Benjamim, este talvez seja o mais inusitado para se colocar neste mural: letra meio trapalhona, música pouco conhecida… e, no entanto, uma daquelas que a Rita e o Francisco não dispensam de cantar, ou até gritar!, nos inúmeros concertos a que já foram deste artista. E, afinal, na música como no casamento, não é isso que interessa: uma melodia eficaz que em harmonia põe os dois a dançar em conjunto?", link: "https://open.spotify.com/track/4FlK6zdvr5sV1WC69zrHXu", imagem: "images/mesa1.jpg" },
+        20: { titulo: "Dor no Ombro, Pedro de Tróia", descricao: "Nos primeiros tempos do seu namoro, a Rita e o Francisco, à boleia deste último, ouviram as músicas de Pedro de Tróia até à exaustão. Foi seu, inclusive, o primeiro concerto que os noivos assistiram enquanto namorados. À altura, a Rita ficou apaixonada por esta música e enchia, com a sua voz de rouxinol, o carro do Francisco. Talvez por gostar de adormecer no ombro do seu então namorado; talvez já previsse o futuro porque, como é cantado, “Quero viver tudo até ao fim neste amor de quem é tão doido por ti”.", link: "https://open.spotify.com/track/7wSBWEhS6TQ5tuGd4BT7kt", imagem: "images/mesa20.jpg" },
+        21: { titulo: "Seja Agora, Deolinda", descricao: "Um clássico da música tradicional moderna deste nosso país, não há viagem que os noivos façam que não termine com ambos a cantar esta música dos Deolinda! Não é apenas um clássico dos nossos tempos, música bem animada, mas, de certo modo, também conta a história da sua relação: depois de se conhecerem sem guardarem boas memórias um do outro, em 2019, acabaram por se “ver os dois, ver no que isto dá, ficar um pouco mais a conversar, ter a eternidade para nós, quem sabe, jantar”. E assim hão de ficar juntos para sempre, num “destino qualquer ou um banquinho bom para sentar”.", link: "https://open.spotify.com/track/5ttlmsVFycrU0rfzNlenAV?si=UikkdgpwSBGVJOTyiw_XSg", imagem: "images/mesa21.jpg" }
     };
 
-    function criarMesas() {
-        const container = document.getElementById("mesas-container");
-        for (let i = 1; i <= 21; i++) {
-            let mesa = document.createElement("div");
-            mesa.className = "mesa";
-            mesa.innerText = i;
-            mesa.onclick = () => selecionarMesa(i);
-            container.appendChild(mesa);
-        }
+   function criarMesas() {
+    const container = document.getElementById("mesas-container");
+
+    // Lista de cores vibrantes inspiradas nos Santos Populares
+    const coresDisponiveis = [
+        "#ff0000", "#ff7300", "#ffcc00", "#32cd32", "#008000", 
+        "#0066ff", "#4b0082", "#8b00ff", "#ff1493", "#ff69b4", 
+        "#db7093", "#ff4500", "#ff8c00", "#ffd700", "#adff2f", 
+        "#00ff7f", "#20b2aa", "#1e90ff", "#4169e1", "#8a2be2", 
+        "#9370db"
+    ];
+
+    let coresUsadas = [];
+
+    for (let i = 1; i <= 21; i++) {
+        let mesa = document.createElement("div");
+        mesa.className = "mesa";
+
+        let magericoTop = document.createElement("div");
+        magericoTop.className = "magerico-top";
+
+        let magericoPot = document.createElement("div");
+        magericoPot.className = "magerico-pot";
+
+        let cravoContainer = document.createElement("div");
+        cravoContainer.className = "cravo-container";
+
+        let cravoHaste = document.createElement("div");
+        cravoHaste.className = "cravo-haste";
+
+        let cravoBandeira = document.createElement("div");
+        cravoBandeira.className = "cravo-bandeira";
+
+        // Garantir cor única para a bandeira
+        let cor = obterCorUnica(coresDisponiveis, coresUsadas);
+        cravoBandeira.style.backgroundColor = cor;
+        //cravoBandeira.innerText = i; // Número da mesa dentro da bandeira
+
+        cravoContainer.appendChild(cravoHaste);
+        cravoContainer.appendChild(cravoBandeira);
+        magericoTop.appendChild(cravoContainer);
+
+        mesa.appendChild(magericoTop);
+        mesa.appendChild(magericoPot);
+
+        mesa.onclick = () => selecionarMesa(i);
+        container.appendChild(mesa);
+    }
+}
+
+// Função para obter cores únicas
+function obterCorUnica(coresDisponiveis, coresUsadas) {
+    let coresRestantes = coresDisponiveis.filter(cor => !coresUsadas.includes(cor));
+
+    if (coresRestantes.length === 0) {
+        coresUsadas = []; // Reset quando todas as cores forem usadas
+        coresRestantes = [...coresDisponiveis];
     }
 
-    function selecionarMesa(numeroMesa) {
-        const descricaoDiv = document.getElementById("descricao");
-        const mesaInfo = descricoesMesas[numeroMesa];
+    let corSelecionada = coresRestantes[Math.floor(Math.random() * coresRestantes.length)];
+    coresUsadas.push(corSelecionada);
+    return corSelecionada;
+}
 
-        descricaoDiv.style.display = "block";
-        descricaoDiv.innerHTML = `
-            <h3>${mesaInfo.titulo}</h3>
-            <p>${mesaInfo.descricao}</p>
-            <a href="${mesaInfo.link}" target="_blank">
-                <img src="images/spotify-logo.png" alt="Ouça no Spotify" style="width: 150px; margin-top: 10px;">
-            </a>
-            <br>
-            <p><a href="${mesaInfo.link}" target="_blank" style="font-size: 18px; font-weight: bold; color: #1DB954;">Ouça no Spotify</a></p>
-            <img src="${mesaInfo.imagem}" alt="Imagem da mesa ${numeroMesa}" style="max-width: 300px; margin-top: 10px;">
-        `;
+function selecionarMesa(numeroMesa) {
+    const descricaoDiv = document.getElementById("descricao");
+    const mesaInfo = descricoesMesas[numeroMesa];
 
-        history.pushState(null, "", "?mesa=" + numeroMesa);
+    descricaoDiv.style.display = "block";
+    descricaoDiv.innerHTML = `
+        <h3>${mesaInfo.titulo}</h3>
+        <p>${mesaInfo.descricao}</p>
+        <a href="${mesaInfo.link}" target="_blank">
+            <img src="images/spotify-logo.png" alt="Ouça no Spotify" style="width: 150px; margin-top: 10px;">
+        </a>
+        <br>
+        <p><a href="${mesaInfo.link}" target="_blank" style="font-size: 18px; font-weight: bold; color: #1DB954;">Ouça no Spotify</a></p>
+        <img src="${mesaInfo.imagem}" alt="Imagem da mesa ${numeroMesa}" style="max-width: 300px; margin-top: 10px;">
+    `;
 
-        // Faz o scroll suave para a descrição
-        descricaoDiv.scrollIntoView({ behavior: "smooth" });
-    }
+    history.pushState(null, "", "?mesa=" + numeroMesa);
+    descricaoDiv.scrollIntoView({ behavior: "smooth" });
 
+    // Remover seleção anterior
+    document.querySelectorAll(".mesa").forEach(mesa => mesa.classList.remove("selecionada"));
+
+    // Adicionar destaque à mesa selecionada
+    const mesaSelecionada = document.querySelectorAll(".mesa")[numeroMesa - 1];
+    mesaSelecionada.classList.add("selecionada");
+}
     window.onload = () => {
         criarMesas();
         verificarMesaNaURL();
     };
+
 </script>
+
 	
 
 
