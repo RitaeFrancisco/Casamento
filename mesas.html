@@ -303,7 +303,20 @@ function selecionarMesa(numeroMesa) {
     history.pushState(null, "", "?mesa=" + numeroMesa);
     descricaoDiv.scrollIntoView({ behavior: "smooth" });
 
-   function verificarMesaNaURL() {
+// Remover seleção anterior
+    document.querySelectorAll(".mesa").forEach(mesa => mesa.classList.remove("selecionada"));
+
+    // Adicionar destaque à mesa selecionada
+    const mesaSelecionada = document.querySelectorAll(".mesa")[numeroMesa - 1];
+    mesaSelecionada.classList.add("selecionada");
+}
+	
+window.addEventListener("DOMContentLoaded", () => {
+    criarMesas();
+    verificarMesaNaURL();
+});
+
+function verificarMesaNaURL() {
     const params = new URLSearchParams(window.location.search);
     const mesaSelecionada = params.get("mesa");
 
@@ -314,18 +327,6 @@ function selecionarMesa(numeroMesa) {
     }
 }
 
-
-// Remover seleção anterior
-    document.querySelectorAll(".mesa").forEach(mesa => mesa.classList.remove("selecionada"));
-
-    // Adicionar destaque à mesa selecionada
-    const mesaSelecionada = document.querySelectorAll(".mesa")[numeroMesa - 1];
-    mesaSelecionada.classList.add("selecionada");
-}
-window.onload = () => {
-    criarMesas();
-    verificarMesaNaURL();
-};
 
 </script>
 
