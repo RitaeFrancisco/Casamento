@@ -303,14 +303,17 @@ function selecionarMesa(numeroMesa) {
     history.pushState(null, "", "?mesa=" + numeroMesa);
     descricaoDiv.scrollIntoView({ behavior: "smooth" });
 
-    function verificarMesaNaURL() {
+   function verificarMesaNaURL() {
     const params = new URLSearchParams(window.location.search);
     const mesaSelecionada = params.get("mesa");
 
     if (mesaSelecionada && descricoesMesas[mesaSelecionada]) {
-        selecionarMesa(parseInt(mesaSelecionada));
+        setTimeout(() => {
+            selecionarMesa(parseInt(mesaSelecionada));
+        }, 500); // Pequeno atraso para garantir que as mesas sejam criadas antes da seleção
     }
 }
+
 
 // Remover seleção anterior
     document.querySelectorAll(".mesa").forEach(mesa => mesa.classList.remove("selecionada"));
